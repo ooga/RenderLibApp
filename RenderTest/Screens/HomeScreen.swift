@@ -9,19 +9,15 @@
 import Foundation
 import Render
 
-struct HomeScreenState: StateType {
-    
-}
-
-class HomeScreen: ComponentView<HomeScreenState> {
+class HomeScreen: StatelessComponentView {
     override func render() -> NodeType {
         return Node<UIView>{ view, layout, size in
             view.backgroundColor = UIColor.lightGray
         }.add(children: [
-            ComponentNode(Box(), in: self) { component, _ in
+            ComponentNode(BoxComponent(), in: self) { component, _ in
                 component.text = "tutu"
             },
-            ComponentNode(Box(), in: self) { component, _ in
+            ComponentNode(BoxComponent(), in: self) { component, _ in
                 component.text = "hehe"
             }
         ])

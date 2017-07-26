@@ -1,11 +1,18 @@
+//
+//  HomeController.swift
+//  RenderTest
+//
+//  Created by Thomas Noury on 26/07/2017.
+//  Copyright © 2017 Kisio. All rights reserved.
+//
+
 import Render
 
-class TestController: ViewController, ComponentController {
+class HomeController: ViewController, ComponentController {
     var component = HomeScreen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addComponentToViewControllerHierarchy()
     }
     
@@ -14,6 +21,6 @@ class TestController: ViewController, ComponentController {
     }
     
     func configureComponentProps() {
-        
+        // no props
     }
 }

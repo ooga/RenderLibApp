@@ -9,7 +9,7 @@
 import Foundation
 import Render
 
-class Box: StatelessComponentView {
+class BoxComponent: StatelessComponentView {
     var text: String = ""
     
     override func render() -> NodeType {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T38-aw-4jX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ImO-ak-a5H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test Controller-->
-        <scene sceneID="RXK-0G-3id">
+        <!--Home Controller-->
+        <scene sceneID="0OW-BX-e2o">
             <objects>
-                <viewController id="T38-aw-4jX" customClass="TestController" customModule="RenderTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ImO-ak-a5H" customClass="HomeController" customModule="RenderTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Cy-ZU-zku"/>
-                        <viewControllerLayoutGuide type="bottom" id="9s0-iX-4fk"/>
+                        <viewControllerLayoutGuide type="top" id="HBL-0e-Rsp"/>
+                        <viewControllerLayoutGuide type="bottom" id="MOp-0i-etQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kwK-2R-gFN">
+                    <view key="view" contentMode="scaleToFill" id="vYa-QI-3oV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="snD-jM-rVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a43-s1-TLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="128"/>
+            <point key="canvasLocation" x="871" y="96"/>
         </scene>
     </scenes>
 </document>
