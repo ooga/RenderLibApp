@@ -1,0 +1,12 @@
+PODS:
+  - Render (4.8)
+
+DEPENDENCIES:
+  - Render (= 4.8)
+
+SPEC CHECKSUMS:
+  Render: eee9440a7803ad69d9bb4780f69aa6b51f45be6a
+
+PODFILE CHECKSUM: 23ec96bca64c515669120d0f6cf7a508934bacdb
+
+COCOAPODS: 1.1.0
