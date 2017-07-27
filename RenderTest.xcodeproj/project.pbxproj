@@ -10,16 +10,35 @@
 		0B87F64B17BEF38868A49925 /* Pods_RenderTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608B53C2D36D10804B512C88 /* Pods_RenderTestTests.framework */; };
 		539B5D07D44A1ED2A696D629 /* Pods_RenderTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB69EB843897A145EE2B03D /* Pods_RenderTestUITests.framework */; };
 		81E4DB8B441D859CB837099F /* Pods_RenderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AD243D003A93CB77465AD /* Pods_RenderTest.framework */; };
+		A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */; };
+		A103CE441F28D89E00715FAB /* DateTimeButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */; };
+		A103CE461F28DAFB00715FAB /* FormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE451F28DAFB00715FAB /* FormComponent.swift */; };
+		A103CE481F28DB7F00715FAB /* AutocompleteInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE471F28DB7F00715FAB /* AutocompleteInputComponent.swift */; };
+		A103CE4A1F28DC9A00715FAB /* IconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE491F28DC9A00715FAB /* IconComponent.swift */; };
+		A103CE4C1F28DE3200715FAB /* TextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE4B1F28DE3200715FAB /* TextComponent.swift */; };
+		A103CE4E1F28E17D00715FAB /* SeparatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE4D1F28E17D00715FAB /* SeparatorComponent.swift */; };
+		A103CE501F28EA1D00715FAB /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE4F1F28EA1D00715FAB /* ListRow.swift */; };
+		A103CE521F28ED6300715FAB /* ListViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE511F28ED6300715FAB /* ListViewComponent.swift */; };
+		A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */; };
+		A103CE561F28F0E000715FAB /* JourneySolutionRowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */; };
+		A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */; };
+		A103CE5C1F28F52300715FAB /* DurationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE5B1F28F52300715FAB /* DurationComponent.swift */; };
+		A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */; };
+		A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F2F1F29E1FD00FD467A /* ModeComponent.swift */; };
+		A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F341F29E47900FD467A /* ViewComponent.swift */; };
+		A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F361F29E4A800FD467A /* ButtonComponent.swift */; };
+		A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F381F29E51900FD467A /* LabelComponent.swift */; };
 		A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65521F28924B0009A233 /* AppDelegate.swift */; };
 		A16F65581F28924B0009A233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F65561F28924B0009A233 /* Main.storyboard */; };
 		A16F655A1F28924B0009A233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16F65591F28924B0009A233 /* Assets.xcassets */; };
 		A16F655D1F28924B0009A233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F655B1F28924B0009A233 /* LaunchScreen.storyboard */; };
 		A16F65681F28924B0009A233 /* RenderTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65671F28924B0009A233 /* RenderTestTests.swift */; };
 		A16F65731F28924B0009A233 /* RenderTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65721F28924B0009A233 /* RenderTestUITests.swift */; };
-		A17F50D21F28BF7300AF8F1C /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D11F28BF7300AF8F1C /* HomeScreen.swift */; };
 		A17F50D51F28BF7E00AF8F1C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D31F28BF7E00AF8F1C /* HomeController.swift */; };
 		A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D41F28BF7E00AF8F1C /* ViewController.swift */; };
 		A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */; };
+		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
+		A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +66,24 @@
 		5D4B9C5B87B1D5426D71D8EA /* Pods-RenderTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTest/Pods-RenderTest.debug.xcconfig"; sourceTree = "<group>"; };
 		608B53C2D36D10804B512C88 /* Pods_RenderTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RenderTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704AAAD801F330AA938336AD /* Pods-RenderTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTestTests/Pods-RenderTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneyFormComponent.swift; path = Components/JourneyFormComponent.swift; sourceTree = "<group>"; };
+		A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTimeButtonComponent.swift; path = Components/DateTimeButtonComponent.swift; sourceTree = "<group>"; };
+		A103CE451F28DAFB00715FAB /* FormComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormComponent.swift; path = Components/FormComponent.swift; sourceTree = "<group>"; };
+		A103CE471F28DB7F00715FAB /* AutocompleteInputComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutocompleteInputComponent.swift; path = Components/AutocompleteInputComponent.swift; sourceTree = "<group>"; };
+		A103CE491F28DC9A00715FAB /* IconComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconComponent.swift; path = Components/IconComponent.swift; sourceTree = "<group>"; };
+		A103CE4B1F28DE3200715FAB /* TextComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextComponent.swift; path = Components/TextComponent.swift; sourceTree = "<group>"; };
+		A103CE4D1F28E17D00715FAB /* SeparatorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorComponent.swift; path = Components/SeparatorComponent.swift; sourceTree = "<group>"; };
+		A103CE4F1F28EA1D00715FAB /* ListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListRow.swift; path = Components/ListRow.swift; sourceTree = "<group>"; };
+		A103CE511F28ED6300715FAB /* ListViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewComponent.swift; path = Components/ListViewComponent.swift; sourceTree = "<group>"; };
+		A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionComponent.swift; path = Components/JourneySolutionComponent.swift; sourceTree = "<group>"; };
+		A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionRowComponent.swift; path = Components/JourneySolutionRowComponent.swift; sourceTree = "<group>"; };
+		A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneyRoadmapFriezeComponent.swift; path = Components/JourneyRoadmapFriezeComponent.swift; sourceTree = "<group>"; };
+		A103CE5B1F28F52300715FAB /* DurationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DurationComponent.swift; path = Components/DurationComponent.swift; sourceTree = "<group>"; };
+		A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySectionModeComponent.swift; path = Components/JourneySectionModeComponent.swift; sourceTree = "<group>"; };
+		A1139F2F1F29E1FD00FD467A /* ModeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeComponent.swift; path = Components/ModeComponent.swift; sourceTree = "<group>"; };
+		A1139F341F29E47900FD467A /* ViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewComponent.swift; path = Components/Primitive/ViewComponent.swift; sourceTree = "<group>"; };
+		A1139F361F29E4A800FD467A /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonComponent.swift; path = Components/Primitive/ButtonComponent.swift; sourceTree = "<group>"; };
+		A1139F381F29E51900FD467A /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = Components/Primitive/LabelComponent.swift; sourceTree = "<group>"; };
 		A16F654F1F28924B0009A233 /* RenderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65521F28924B0009A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16F65571F28924B0009A233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,10 +96,11 @@
 		A16F656E1F28924B0009A233 /* RenderTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenderTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65721F28924B0009A233 /* RenderTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderTestUITests.swift; sourceTree = "<group>"; };
 		A16F65741F28924B0009A233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A17F50D11F28BF7300AF8F1C /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeScreen.swift; path = Screens/HomeScreen.swift; sourceTree = "<group>"; };
 		A17F50D31F28BF7E00AF8F1C /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controllers/HomeController.swift; sourceTree = "<group>"; };
 		A17F50D41F28BF7E00AF8F1C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxComponent.swift; path = Components/BoxComponent.swift; sourceTree = "<group>"; };
+		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
+		A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Components/ContainerComponent.swift; sourceTree = "<group>"; };
 		D852F41163B4D54EF4D82501 /* Pods-RenderTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTestTests/Pods-RenderTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA90B2DEB60A30D341B4A400 /* Pods-RenderTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTest/Pods-RenderTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +154,16 @@
 				5BB69EB843897A145EE2B03D /* Pods_RenderTestUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1139F331F29E43C00FD467A /* Primitive */ = {
+			isa = PBXGroup;
+			children = (
+				A1139F341F29E47900FD467A /* ViewComponent.swift */,
+				A1139F361F29E4A800FD467A /* ButtonComponent.swift */,
+				A1139F381F29E51900FD467A /* LabelComponent.swift */,
+			);
+			name = Primitive;
 			sourceTree = "<group>";
 		};
 		A16F65461F28924B0009A233 = {
@@ -176,7 +224,24 @@
 		A183C2D21F289EB000BD0715 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A1139F331F29E43C00FD467A /* Primitive */,
 				A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */,
+				A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */,
+				A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */,
+				A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */,
+				A103CE451F28DAFB00715FAB /* FormComponent.swift */,
+				A103CE471F28DB7F00715FAB /* AutocompleteInputComponent.swift */,
+				A103CE491F28DC9A00715FAB /* IconComponent.swift */,
+				A103CE4B1F28DE3200715FAB /* TextComponent.swift */,
+				A103CE4D1F28E17D00715FAB /* SeparatorComponent.swift */,
+				A103CE4F1F28EA1D00715FAB /* ListRow.swift */,
+				A103CE511F28ED6300715FAB /* ListViewComponent.swift */,
+				A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */,
+				A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */,
+				A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */,
+				A103CE5B1F28F52300715FAB /* DurationComponent.swift */,
+				A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */,
+				A1139F2F1F29E1FD00FD467A /* ModeComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -193,7 +258,7 @@
 		A183C2D41F289EE800BD0715 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A17F50D11F28BF7300AF8F1C /* HomeScreen.swift */,
+				A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -483,10 +548,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */,
-				A17F50D21F28BF7300AF8F1C /* HomeScreen.swift in Sources */,
+				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
+				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
+				A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */,
+				A103CE461F28DAFB00715FAB /* FormComponent.swift in Sources */,
+				A103CE481F28DB7F00715FAB /* AutocompleteInputComponent.swift in Sources */,
 				A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */,
+				A103CE441F28D89E00715FAB /* DateTimeButtonComponent.swift in Sources */,
+				A103CE5C1F28F52300715FAB /* DurationComponent.swift in Sources */,
+				A103CE4C1F28DE3200715FAB /* TextComponent.swift in Sources */,
+				A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */,
+				A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */,
+				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
+				A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */,
+				A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */,
+				A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */,
+				A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */,
 				A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */,
+				A103CE561F28F0E000715FAB /* JourneySolutionRowComponent.swift in Sources */,
+				A103CE4A1F28DC9A00715FAB /* IconComponent.swift in Sources */,
+				A103CE521F28ED6300715FAB /* ListViewComponent.swift in Sources */,
 				A17F50D51F28BF7E00AF8F1C /* HomeController.swift in Sources */,
+				A103CE4E1F28E17D00715FAB /* SeparatorComponent.swift in Sources */,
+				A103CE501F28EA1D00715FAB /* ListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

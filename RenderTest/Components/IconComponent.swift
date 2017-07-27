@@ -1,5 +1,5 @@
 //
-//  BoxComponent.swift
+//  IconComponent.swift
 //  RenderTest
 //
 //  Created by Thomas Noury on 26/07/2017.
@@ -9,6 +9,6 @@
 import Foundation
 import Render
 
-func BoxComponent() -> NodeType {    
-    return ViewComponent()
+func IconComponent(iconName: String) -> NodeType {
+    return LabelComponent(text: "icon<" + iconName + ">")
 }

@@ -9,7 +9,7 @@
 import Render
 
 class HomeController: ViewController, ComponentController {
-    var component = HomeScreen()
+    var component = JourneySolutionScreen()
     
     override func viewDidLoad() {
         super.viewDidLoad()

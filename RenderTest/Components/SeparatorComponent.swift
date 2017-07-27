@@ -1,5 +1,5 @@
 //
-//  BoxComponent.swift
+//  SeparatorComponent.swift
 //  RenderTest
 //
 //  Created by Thomas Noury on 26/07/2017.
@@ -9,6 +9,6 @@
 import Foundation
 import Render
 
-func BoxComponent() -> NodeType {    
+func SeparatorComponent() -> NodeType {
     return ViewComponent()
 }
