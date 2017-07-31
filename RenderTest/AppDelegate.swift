@@ -9,6 +9,18 @@
 import UIKit
 import Render
 
+struct Configuration {
+    struct ColorConfiguration {
+        var primary = UIColor(red:0.40, green:0.40, blue:0.40, alpha:1.0)
+        var secondary = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
+        var tertiary = UIColor(red:0.00, green:0.62, blue:0.88, alpha:1.0)
+    }
+    
+    var colors = ColorConfiguration()
+}
+
+let config = Configuration()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

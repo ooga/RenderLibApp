@@ -9,11 +9,25 @@
 import Foundation
 import Render
 
-func JourneyRoadmapFriezeComponent() -> NodeType {
-    return ViewComponent().add(children: [
-        ContainerComponent().add(children: [
-            IconComponent(iconName: "angle-right"),
-            JourneySectionModeComponent()
+class JourneyRoadmapFriezeComponent: ViewComponent {
+    override init(styles: Dictionary<String, Any>) {
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        super.init(styles: [:])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return ComponentNode(ViewComponent(), in: self).add(children: [
+            ComponentNode(ContainerComponent(), in: self).add(children: [
+                ComponentNode(IconComponent(iconName: "angle-right"), in: self),
+                ComponentNode(JourneySectionModeComponent(), in: self)
+            ])
         ])
-    ])
+    }
 }

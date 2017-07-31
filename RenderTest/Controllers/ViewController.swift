@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import Render
 
 class ViewController: UIViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        ViewController.styleNavigationBar(viewController: self)
+        view.backgroundColor = config.colors.tertiary
+        title = String(describing: type(of: self)).replacingOccurrences(of: "ViewController", with: "")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    static func styleNavigationBar(viewController vc: UIViewController) {
+        vc.navigationController?.navigationBar.isTranslucent = true
+        vc.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.green]
+        vc.navigationController?.navigationBar.barTintColor = UIColor.black
+        vc.navigationController?.navigationBar.tintColor = UIColor.green
+        vc.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }

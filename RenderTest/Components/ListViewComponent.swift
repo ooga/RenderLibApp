@@ -9,8 +9,22 @@
 import Foundation
 import Render
 
-func ListViewComponent() -> NodeType {
-    return ContainerComponent().add(children: [
-        JourneySolutionComponent()
-    ])
+class ListViewComponent: ViewComponent {
+    override init(styles: Dictionary<String, Any>) {
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        super.init(styles: [:])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return ComponentNode(ContainerComponent(), in: self).add(children: [
+            ComponentNode(JourneySolutionComponent(), in: self)
+        ])
+    }
 }

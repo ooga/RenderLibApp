@@ -9,31 +9,38 @@
 import Foundation
 import Render
 
-let styles = [
-    "view": [
-        "backgroundColor": UIColor.red,
-        "cornerRadius": 4
-    ]
+let viewStyles = [
+    "backgroundColor": UIColor.red
 ]
 
-class JourneySolutionScreen: StatelessComponentView {
+let containerStyles = [
+    "backgroundColor": config.colors.tertiary
+]
+
+let listStyles = [
+    "backgroundColor": UIColor.green
+]
+
+class JourneySolutionScreen: ScreenComponent {
     override func render() -> NodeType {
-        return ViewComponent(styles: styles).add(children: [
-            TextComponent(text: "My awesome app")
-        ])
-        
-        /*
-        return ViewComponent().add(children: [
-            ContainerComponent(containerSize: "small").add(children: [
-                JourneyFormComponent(),
-                DateTimeButtonComponent()
-            ]),
-            ListViewComponent().add(children: [
-                JourneySolutionComponent(),
-                JourneySolutionComponent(),
-                JourneySolutionComponent()
+        return ComponentNode(ScreenComponent(), in: self).add(children: [
+            ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
+                ComponentNode(ContainerComponent(styles: containerStyles), in: self).add(children: [
+                    ComponentNode(JourneyFormComponent(), in: self),
+                    ComponentNode(DateTimeButtonComponent(), in: self)
+                ]),
+                ComponentNode(ListViewComponent(styles: listStyles), in: self).add(children: [
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    /*
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    */
+                ])
             ])
         ])
-        */
     }
 }

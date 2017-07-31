@@ -9,6 +9,20 @@
 import Foundation
 import Render
 
-func DurationComponent() -> NodeType {
-    return ViewComponent()
+class DurationComponent: ViewComponent {
+    override init(styles: Dictionary<String, Any>) {
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        super.init(styles: [:])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return ComponentNode(ViewComponent(), in: self)
+    }
 }

@@ -9,6 +9,26 @@
 import Foundation
 import Render
 
-func ButtonComponent() -> NodeType {
-    return Node<UIButton>()
+class ButtonComponent: StylizedComponent {
+    var text: String = ""
+    
+    init(text: String = "", styles: Dictionary<String, Any> = [:]) {
+        self.text = text
+        
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        super.init(styles: [:])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return Node<UIButton>() { view, layout, _ in
+            self.applyStyles(view: view, layout: layout)
+        }
+    }
 }

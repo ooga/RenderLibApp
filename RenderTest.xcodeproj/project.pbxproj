@@ -28,6 +28,8 @@
 		A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F341F29E47900FD467A /* ViewComponent.swift */; };
 		A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F361F29E4A800FD467A /* ButtonComponent.swift */; };
 		A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F381F29E51900FD467A /* LabelComponent.swift */; };
+		A1139F441F2A241800FD467A /* StylizedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F431F2A241800FD467A /* StylizedComponent.swift */; };
+		A15734CA1F2B334300C860FC /* ScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15734C91F2B334300C860FC /* ScreenComponent.swift */; };
 		A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65521F28924B0009A233 /* AppDelegate.swift */; };
 		A16F65581F28924B0009A233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F65561F28924B0009A233 /* Main.storyboard */; };
 		A16F655A1F28924B0009A233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16F65591F28924B0009A233 /* Assets.xcassets */; };
@@ -39,6 +41,7 @@
 		A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */; };
 		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
 		A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */; };
+		A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99D181F2F75FF00A3C767 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,8 @@
 		A1139F341F29E47900FD467A /* ViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewComponent.swift; path = Components/Primitive/ViewComponent.swift; sourceTree = "<group>"; };
 		A1139F361F29E4A800FD467A /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonComponent.swift; path = Components/Primitive/ButtonComponent.swift; sourceTree = "<group>"; };
 		A1139F381F29E51900FD467A /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = Components/Primitive/LabelComponent.swift; sourceTree = "<group>"; };
+		A1139F431F2A241800FD467A /* StylizedComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StylizedComponent.swift; path = Components/Primitive/StylizedComponent.swift; sourceTree = "<group>"; };
+		A15734C91F2B334300C860FC /* ScreenComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenComponent.swift; path = Components/Primitive/ScreenComponent.swift; sourceTree = "<group>"; };
 		A16F654F1F28924B0009A233 /* RenderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65521F28924B0009A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16F65571F28924B0009A233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxComponent.swift; path = Components/BoxComponent.swift; sourceTree = "<group>"; };
 		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
 		A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Components/ContainerComponent.swift; sourceTree = "<group>"; };
+		A1A99D181F2F75FF00A3C767 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Util/Styles.swift; sourceTree = "<group>"; };
 		D852F41163B4D54EF4D82501 /* Pods-RenderTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTestTests/Pods-RenderTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA90B2DEB60A30D341B4A400 /* Pods-RenderTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTest/Pods-RenderTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,11 +165,21 @@
 		A1139F331F29E43C00FD467A /* Primitive */ = {
 			isa = PBXGroup;
 			children = (
+				A1139F431F2A241800FD467A /* StylizedComponent.swift */,
 				A1139F341F29E47900FD467A /* ViewComponent.swift */,
 				A1139F361F29E4A800FD467A /* ButtonComponent.swift */,
 				A1139F381F29E51900FD467A /* LabelComponent.swift */,
+				A15734C91F2B334300C860FC /* ScreenComponent.swift */,
 			);
 			name = Primitive;
+			sourceTree = "<group>";
+		};
+		A1139F3E1F2A16B600FD467A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A1A99D181F2F75FF00A3C767 /* Styles.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		A16F65461F28924B0009A233 = {
@@ -191,6 +207,7 @@
 		A16F65511F28924B0009A233 /* RenderTest */ = {
 			isa = PBXGroup;
 			children = (
+				A1139F3E1F2A16B600FD467A /* Util */,
 				A183C2D41F289EE800BD0715 /* Screens */,
 				A183C2D31F289EC000BD0715 /* Controllers */,
 				A183C2D21F289EB000BD0715 /* Components */,
@@ -562,11 +579,14 @@
 				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
 				A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */,
 				A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */,
+				A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */,
 				A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */,
 				A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */,
 				A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */,
 				A103CE561F28F0E000715FAB /* JourneySolutionRowComponent.swift in Sources */,
+				A15734CA1F2B334300C860FC /* ScreenComponent.swift in Sources */,
 				A103CE4A1F28DC9A00715FAB /* IconComponent.swift in Sources */,
+				A1139F441F2A241800FD467A /* StylizedComponent.swift in Sources */,
 				A103CE521F28ED6300715FAB /* ListViewComponent.swift in Sources */,
 				A17F50D51F28BF7E00AF8F1C /* HomeController.swift in Sources */,
 				A103CE4E1F28E17D00715FAB /* SeparatorComponent.swift in Sources */,

@@ -1,20 +1,16 @@
 //
-//  IconComponent.swift
+//  ScreenComponent.swift
 //  RenderTest
 //
-//  Created by Thomas Noury on 26/07/2017.
+//  Created by Thomas Noury on 28/07/2017.
 //  Copyright © 2017 Kisio. All rights reserved.
 //
 
 import Foundation
 import Render
 
-class IconComponent: LabelComponent {
-    var iconName: String = ""
-    
-    init(iconName: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.iconName = iconName
-        
+class ScreenComponent: StylizedComponent {
+    override init(styles: Dictionary<String, Any>) {
         super.init(styles: styles)
     }
     
@@ -27,6 +23,10 @@ class IconComponent: LabelComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(LabelComponent(text: "icon<" + iconName + ">"), in: self)
+        return Node<UIScrollView>() { view, layout, size in
+            layout.width = size.width
+            layout.height = size.height
+            self.applyStyles(view: view, layout: layout)
+        }
     }
 }

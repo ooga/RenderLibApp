@@ -9,6 +9,23 @@
 import Foundation
 import Render
 
-func ModeComponent(name: String) -> NodeType {
-    return IconComponent(iconName: name)
+class ModeComponent: ViewComponent {
+    var name: String = ""
+    
+    init(name: String = "", styles: Dictionary<String, Any> = [:]) {
+        self.name = name
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        fatalError("init() has not been implemented")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return ComponentNode(IconComponent(iconName: name), in: self)
+    }
 }

@@ -9,24 +9,27 @@
 import Foundation
 import Render
 
-func ViewComponent() -> NodeType {
-    return ViewComponent(styles: [:]) 
-}
-
-func ViewComponent(styles: Dictionary<String, Dictionary<String, Any>>) -> NodeType {
-    return Node<UIView>(reuseIdentifier: "View") { view, layout, size in
-        for (key, props) in styles {
-            if key == "view" {
-                for (prop, value) in props {
-                    switch prop {
-                        case "alpha": view.alpha = CGFloat((value as? Int)!); break
-                        case "backgroundColor": view.backgroundColor = value as? UIColor; break
-                        case "cornerRadius": view.cornerRadius = CGFloat((value as? Int)!); break
-                        default: break
-                    }
+class ViewComponent: StylizedComponent {
+    override init(styles: Dictionary<String, Any>) {
+        super.init(styles: styles)
+    }
+    
+    required init() {
+        super.init(styles: [:])
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func render() -> NodeType {
+        return Node<UIView>() { view, layout, size in
+            self.applyStyles(view: view, layout: layout)
+            for (prop, value) in self.styles {
+                switch prop {
+                case "borderColor": view.layer.borderColor = (value as! CGColor); break
+                default: break
                 }
-            } else if key == "layout" {
-                
             }
         }
     }
