@@ -23,6 +23,11 @@ class TextComponent: LabelComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(LabelComponent(text: text), in: self)
+        let computedStyles = mergeDictionaries(dict1: textStyles, dict2: self.styles)
+        return ComponentNode(LabelComponent(text: text, styles: computedStyles), in: self)
     }
+    
+    let textStyles: [String: Any] = [
+        "color": config.colors.primary,
+    ]
 }

@@ -23,11 +23,29 @@ class DateTimeButtonComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self).add(children: [
-            ComponentNode(ListRowComponent(), in: self).add(children: [
-                ComponentNode(TextComponent(text: "Départ : Ven. 21 Jui. - 13h30"), in: self),
-                ComponentNode(IconComponent(iconName: "arrow-right"), in: self)
+        let computedStyles = mergeDictionaries(dict1: listRowStyles, dict2: self.styles)
+        return ComponentNode(ListRowComponent(styles: computedStyles), in: self).add(children: [
+            ComponentNode(TextComponent(text: "Départ : Ven. 21 Jui. - 13h30", styles: textStyles), in: self),
+            ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
+                ComponentNode(IconComponent(name: "arrow-right", styles: iconStyles), in: self)
             ])
         ])
     }
+    
+    let listRowStyles: [String: Any] = [
+        "paddingTop": config.metrics.margin,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+    ]
+    let textStyles: [String: Any] = [
+        "color": config.colors.white,
+        "fontWeight": "bold",
+    ]
+    let viewStyles: [String: Any] = [
+        "alignItems": YGAlign.flexEnd,
+    ]
+    let iconStyles: [String: Any] = [
+        "color": config.colors.white,
+        "marginBottom": config.metrics.margin,
+    ]
 }

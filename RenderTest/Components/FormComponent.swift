@@ -19,10 +19,16 @@ class FormComponent: ViewComponent {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("FormComponent::init(coder:) has not been implemented")
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(styles: self.styles), in: self)
+        let computedStyles = mergeDictionaries(dict1: formStyles, dict2: self.styles)
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
     }
+    
+    let formStyles: [String: Any] = [
+        "backgroundColor": config.colors.white,
+        "borderRadius": config.metrics.radius,
+    ]
 }

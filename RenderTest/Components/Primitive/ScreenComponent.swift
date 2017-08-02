@@ -25,7 +25,8 @@ class ScreenComponent: StylizedComponent {
     override func render() -> NodeType {
         return Node<UIScrollView>() { view, layout, size in
             layout.width = size.width
-            layout.height = size.height
+            layout.height = size.height - 24
+            layout.marginTop = 24
             self.applyStyles(view: view, layout: layout)
         }
     }

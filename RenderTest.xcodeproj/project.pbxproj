@@ -29,6 +29,11 @@
 		A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F361F29E4A800FD467A /* ButtonComponent.swift */; };
 		A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F381F29E51900FD467A /* LabelComponent.swift */; };
 		A1139F441F2A241800FD467A /* StylizedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F431F2A241800FD467A /* StylizedComponent.swift */; };
+		A12FE1EB1F3059B600D2BB8F /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */; };
+		A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1EC1F306B7700D2BB8F /* PlaceComponent.swift */; };
+		A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1F31F30A07B00D2BB8F /* Icons.swift */; };
+		A12FE1FA1F30B81400D2BB8F /* SDKIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A12FE1F91F30B81400D2BB8F /* SDKIcons.ttf */; };
+		A135E0301F31BAD200191344 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E02F1F31BAD200191344 /* Configuration.swift */; };
 		A15734CA1F2B334300C860FC /* ScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15734C91F2B334300C860FC /* ScreenComponent.swift */; };
 		A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65521F28924B0009A233 /* AppDelegate.swift */; };
 		A16F65581F28924B0009A233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F65561F28924B0009A233 /* Main.storyboard */; };
@@ -36,7 +41,7 @@
 		A16F655D1F28924B0009A233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F655B1F28924B0009A233 /* LaunchScreen.storyboard */; };
 		A16F65681F28924B0009A233 /* RenderTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65671F28924B0009A233 /* RenderTestTests.swift */; };
 		A16F65731F28924B0009A233 /* RenderTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65721F28924B0009A233 /* RenderTestUITests.swift */; };
-		A17F50D51F28BF7E00AF8F1C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D31F28BF7E00AF8F1C /* HomeController.swift */; };
+		A17F50D51F28BF7E00AF8F1C /* JourneySolutionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */; };
 		A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D41F28BF7E00AF8F1C /* ViewController.swift */; };
 		A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */; };
 		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
@@ -88,6 +93,11 @@
 		A1139F361F29E4A800FD467A /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonComponent.swift; path = Components/Primitive/ButtonComponent.swift; sourceTree = "<group>"; };
 		A1139F381F29E51900FD467A /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = Components/Primitive/LabelComponent.swift; sourceTree = "<group>"; };
 		A1139F431F2A241800FD467A /* StylizedComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StylizedComponent.swift; path = Components/Primitive/StylizedComponent.swift; sourceTree = "<group>"; };
+		A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = Util/Dictionary.swift; sourceTree = "<group>"; };
+		A12FE1EC1F306B7700D2BB8F /* PlaceComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceComponent.swift; path = Components/PlaceComponent.swift; sourceTree = "<group>"; };
+		A12FE1F31F30A07B00D2BB8F /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icons.swift; path = Util/Icons.swift; sourceTree = "<group>"; };
+		A12FE1F91F30B81400D2BB8F /* SDKIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDKIcons.ttf; sourceTree = "<group>"; };
+		A135E02F1F31BAD200191344 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Resources/Config/Configuration.swift; sourceTree = "<group>"; };
 		A15734C91F2B334300C860FC /* ScreenComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenComponent.swift; path = Components/Primitive/ScreenComponent.swift; sourceTree = "<group>"; };
 		A16F654F1F28924B0009A233 /* RenderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65521F28924B0009A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +111,7 @@
 		A16F656E1F28924B0009A233 /* RenderTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenderTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65721F28924B0009A233 /* RenderTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderTestUITests.swift; sourceTree = "<group>"; };
 		A16F65741F28924B0009A233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A17F50D31F28BF7E00AF8F1C /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = Controllers/HomeController.swift; sourceTree = "<group>"; };
+		A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsController.swift; path = Controllers/JourneySolutionsController.swift; sourceTree = "<group>"; };
 		A17F50D41F28BF7E00AF8F1C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxComponent.swift; path = Components/BoxComponent.swift; sourceTree = "<group>"; };
 		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
@@ -165,11 +175,11 @@
 		A1139F331F29E43C00FD467A /* Primitive */ = {
 			isa = PBXGroup;
 			children = (
-				A1139F431F2A241800FD467A /* StylizedComponent.swift */,
-				A1139F341F29E47900FD467A /* ViewComponent.swift */,
 				A1139F361F29E4A800FD467A /* ButtonComponent.swift */,
 				A1139F381F29E51900FD467A /* LabelComponent.swift */,
 				A15734C91F2B334300C860FC /* ScreenComponent.swift */,
+				A1139F431F2A241800FD467A /* StylizedComponent.swift */,
+				A1139F341F29E47900FD467A /* ViewComponent.swift */,
 			);
 			name = Primitive;
 			sourceTree = "<group>";
@@ -177,9 +187,27 @@
 		A1139F3E1F2A16B600FD467A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */,
 				A1A99D181F2F75FF00A3C767 /* Styles.swift */,
+				A12FE1F31F30A07B00D2BB8F /* Icons.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		A135E02D1F31BA6C00191344 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A135E02E1F31BA7100191344 /* Config */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A135E02E1F31BA7100191344 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A135E02F1F31BAD200191344 /* Configuration.swift */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		A16F65461F28924B0009A233 = {
@@ -207,15 +235,17 @@
 		A16F65511F28924B0009A233 /* RenderTest */ = {
 			isa = PBXGroup;
 			children = (
-				A1139F3E1F2A16B600FD467A /* Util */,
-				A183C2D41F289EE800BD0715 /* Screens */,
 				A183C2D31F289EC000BD0715 /* Controllers */,
+				A183C2D41F289EE800BD0715 /* Screens */,
 				A183C2D21F289EB000BD0715 /* Components */,
+				A135E02D1F31BA6C00191344 /* Resources */,
+				A1139F3E1F2A16B600FD467A /* Util */,
 				A16F65521F28924B0009A233 /* AppDelegate.swift */,
 				A16F65561F28924B0009A233 /* Main.storyboard */,
 				A16F65591F28924B0009A233 /* Assets.xcassets */,
 				A16F655B1F28924B0009A233 /* LaunchScreen.storyboard */,
 				A16F655E1F28924B0009A233 /* Info.plist */,
+				A12FE1F91F30B81400D2BB8F /* SDKIcons.ttf */,
 			);
 			path = RenderTest;
 			sourceTree = "<group>";
@@ -242,23 +272,24 @@
 			isa = PBXGroup;
 			children = (
 				A1139F331F29E43C00FD467A /* Primitive */,
-				A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */,
-				A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */,
-				A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */,
-				A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */,
-				A103CE451F28DAFB00715FAB /* FormComponent.swift */,
 				A103CE471F28DB7F00715FAB /* AutocompleteInputComponent.swift */,
+				A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */,
+				A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */,
+				A103CE5B1F28F52300715FAB /* DurationComponent.swift */,
+				A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */,
+				A103CE451F28DAFB00715FAB /* FormComponent.swift */,
 				A103CE491F28DC9A00715FAB /* IconComponent.swift */,
-				A103CE4B1F28DE3200715FAB /* TextComponent.swift */,
-				A103CE4D1F28E17D00715FAB /* SeparatorComponent.swift */,
-				A103CE4F1F28EA1D00715FAB /* ListRow.swift */,
-				A103CE511F28ED6300715FAB /* ListViewComponent.swift */,
+				A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */,
+				A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */,
+				A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */,
 				A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */,
 				A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */,
-				A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */,
-				A103CE5B1F28F52300715FAB /* DurationComponent.swift */,
-				A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */,
+				A103CE4F1F28EA1D00715FAB /* ListRow.swift */,
+				A103CE511F28ED6300715FAB /* ListViewComponent.swift */,
 				A1139F2F1F29E1FD00FD467A /* ModeComponent.swift */,
+				A12FE1EC1F306B7700D2BB8F /* PlaceComponent.swift */,
+				A103CE4D1F28E17D00715FAB /* SeparatorComponent.swift */,
+				A103CE4B1F28DE3200715FAB /* TextComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -266,7 +297,7 @@
 		A183C2D31F289EC000BD0715 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A17F50D31F28BF7E00AF8F1C /* HomeController.swift */,
+				A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */,
 				A17F50D41F28BF7E00AF8F1C /* ViewController.swift */,
 			);
 			name = Controllers;
@@ -401,6 +432,7 @@
 			files = (
 				A16F655D1F28924B0009A233 /* LaunchScreen.storyboard in Resources */,
 				A16F655A1F28924B0009A233 /* Assets.xcassets in Resources */,
+				A12FE1FA1F30B81400D2BB8F /* SDKIcons.ttf in Resources */,
 				A16F65581F28924B0009A233 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,14 +599,17 @@
 				A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */,
 				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
+				A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */,
 				A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */,
 				A103CE461F28DAFB00715FAB /* FormComponent.swift in Sources */,
+				A135E0301F31BAD200191344 /* Configuration.swift in Sources */,
 				A103CE481F28DB7F00715FAB /* AutocompleteInputComponent.swift in Sources */,
 				A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */,
 				A103CE441F28D89E00715FAB /* DateTimeButtonComponent.swift in Sources */,
 				A103CE5C1F28F52300715FAB /* DurationComponent.swift in Sources */,
 				A103CE4C1F28DE3200715FAB /* TextComponent.swift in Sources */,
 				A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */,
+				A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */,
 				A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */,
 				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
 				A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */,
@@ -588,7 +623,8 @@
 				A103CE4A1F28DC9A00715FAB /* IconComponent.swift in Sources */,
 				A1139F441F2A241800FD467A /* StylizedComponent.swift in Sources */,
 				A103CE521F28ED6300715FAB /* ListViewComponent.swift in Sources */,
-				A17F50D51F28BF7E00AF8F1C /* HomeController.swift in Sources */,
+				A17F50D51F28BF7E00AF8F1C /* JourneySolutionsController.swift in Sources */,
+				A12FE1EB1F3059B600D2BB8F /* Dictionary.swift in Sources */,
 				A103CE4E1F28E17D00715FAB /* SeparatorComponent.swift in Sources */,
 				A103CE501F28EA1D00715FAB /* ListRow.swift in Sources */,
 			);

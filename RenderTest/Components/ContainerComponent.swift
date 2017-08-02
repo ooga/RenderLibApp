@@ -26,6 +26,14 @@ class ContainerComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(styles: self.styles), in: self)
+        let computedStyles = mergeDictionaries(dict1: smallStyles, dict2: self.styles)
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
     }
+    
+    let smallStyles = [
+        "padding": 10,
+    ]
+    let standardStyles = [
+        "padding": 20,
+    ]
 }

@@ -23,6 +23,7 @@ class ListRowComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self)
+        let computedStyles = self.styles
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
     }
 }

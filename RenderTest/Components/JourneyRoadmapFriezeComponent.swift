@@ -23,9 +23,10 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self).add(children: [
+        let computedStyles = self.styles
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(ContainerComponent(), in: self).add(children: [
-                ComponentNode(IconComponent(iconName: "angle-right"), in: self),
+                ComponentNode(IconComponent(name: "angle-right"), in: self),
                 ComponentNode(JourneySectionModeComponent(), in: self)
             ])
         ])

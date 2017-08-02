@@ -23,8 +23,16 @@ class JourneySolutionComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ListRowComponent(), in: self).add(children: [
+        let computedStyles = mergeDictionaries(dict1: listStyles, dict2: self.styles)
+        return ComponentNode(ListRowComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(JourneySolutionRowComponent(), in: self)
         ])
     }
+    
+    let listStyles:[String: Any] = [
+        "backgroundColor": config.colors.white,
+        "padding": config.metrics.marginL,
+        "borderRadius": config.metrics.radius,
+        "marginBottom": config.metrics.margin,
+    ]
 }

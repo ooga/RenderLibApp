@@ -10,7 +10,9 @@ import Foundation
 import Render
 
 class DurationComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
+    var minutes: Int = 0
+    
+    init(minutes: Int = 0, styles: Dictionary<String, Any> = [:]) {
         super.init(styles: styles)
     }
     
@@ -23,6 +25,11 @@ class DurationComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self)
+        let computedStyles = mergeDictionaries(dict1: textStyles, dict2: self.styles)
+        return ComponentNode(TextComponent(text: "57", styles: computedStyles), in: self)
     }
+    
+    let textStyles:[String: Any] = [
+        "color": config.colors.tertiary,
+    ]
 }

@@ -26,6 +26,7 @@ class ModeComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(IconComponent(iconName: name), in: self)
+        let computedStyles = self.styles
+        return ComponentNode(IconComponent(name: name, styles: computedStyles), in: self)
     }
 }

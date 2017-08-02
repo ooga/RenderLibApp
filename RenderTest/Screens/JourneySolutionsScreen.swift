@@ -9,19 +9,7 @@
 import Foundation
 import Render
 
-let viewStyles = [
-    "backgroundColor": UIColor.red
-]
-
-let containerStyles = [
-    "backgroundColor": config.colors.tertiary
-]
-
-let listStyles = [
-    "backgroundColor": UIColor.green
-]
-
-class JourneySolutionScreen: ScreenComponent {
+class JourneySolutionsScreen: ScreenComponent {
     override func render() -> NodeType {
         return ComponentNode(ScreenComponent(), in: self).add(children: [
             ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
@@ -31,16 +19,20 @@ class JourneySolutionScreen: ScreenComponent {
                 ]),
                 ComponentNode(ListViewComponent(styles: listStyles), in: self).add(children: [
                     ComponentNode(JourneySolutionComponent(), in: self),
-                    /*
                     ComponentNode(JourneySolutionComponent(), in: self),
                     ComponentNode(JourneySolutionComponent(), in: self),
-                    ComponentNode(JourneySolutionComponent(), in: self),
-                    ComponentNode(JourneySolutionComponent(), in: self),
-                    ComponentNode(JourneySolutionComponent(), in: self),
-                    ComponentNode(JourneySolutionComponent(), in: self),
-                    */
                 ])
             ])
         ])
     }
+    
+    let viewStyles = [
+        "backgroundColor": UIColor.red
+    ]
+    let containerStyles = [
+        "backgroundColor": config.colors.tertiary
+    ]
+    let listStyles = [
+        "backgroundColor": config.colors.lighterGray
+    ]
 }

@@ -23,6 +23,12 @@ class SeparatorComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self)
+        let computedStyles = mergeDictionaries(dict1: lineStyles, dict2: self.styles)
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
     }
+    
+    let lineStyles: [String: Any] = [
+        "height": 1,
+        "backgroundColor": config.colors.secondary
+    ]
 }

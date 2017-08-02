@@ -23,17 +23,17 @@ class JourneySolutionRowComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self).add(children: [
+        let computedStyles = self.styles
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(ViewComponent(), in: self).add(children: [
                 ComponentNode(ViewComponent(), in: self).add(children: [
                     ComponentNode(TextComponent(text: "19:30 - 20:06"), in: self),
+                    ComponentNode(DurationComponent(minutes: 57), in: self),
                 ]),
+                ComponentNode(SeparatorComponent(), in: self),
                 ComponentNode(JourneyRoadmapFriezeComponent(), in: self),
                 ComponentNode(TextComponent(text: "Dont 8 min à pied (910m)"), in: self),
             ]),
-            ComponentNode(ViewComponent(), in: self).add(children: [
-                ComponentNode(DurationComponent(), in: self),
-            ])
         ])
     }
 }

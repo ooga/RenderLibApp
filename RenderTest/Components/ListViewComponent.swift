@@ -23,7 +23,8 @@ class ListViewComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ContainerComponent(), in: self).add(children: [
+        let computedStyles = self.styles
+        return ComponentNode(ContainerComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(JourneySolutionComponent(), in: self)
         ])
     }

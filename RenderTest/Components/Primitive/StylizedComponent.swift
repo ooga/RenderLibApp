@@ -31,6 +31,7 @@ class StylizedComponent: StatelessComponentView {
             switch prop {
             case "alpha": view.alpha = value as! CGFloat; break
             case "backgroundColor": view.backgroundColor = value as? UIColor; break
+            case "borderRadius": view.cornerRadius = CGFloat(value as! Int); break
             case "direction": layout.direction = value as! YGDirection; break
             case "flexDirection": layout.flexDirection = value as! YGFlexDirection; break
             case "justifyContent": layout.justifyContent = value as! YGJustify; break
@@ -43,7 +44,7 @@ class StylizedComponent: StatelessComponentView {
             case "display": layout.display = value as! YGDisplay; break
             case "flexGrow": layout.flexGrow = CGFloat(value as! Int); break
             case "flexShrink": layout.flexShrink = CGFloat(value as! Int); break
-            case "flex": layout.flexBasis = CGFloat(value as! Int); break
+            case "flex": break // Don't know how to emulate this in Yoga
             case "left": layout.left = CGFloat(value as! Int); break
             case "top": layout.top = CGFloat(value as! Int); break
             case "right": layout.right = CGFloat(value as! Int); break

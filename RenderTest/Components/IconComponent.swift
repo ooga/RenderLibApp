@@ -10,10 +10,10 @@ import Foundation
 import Render
 
 class IconComponent: LabelComponent {
-    var iconName: String = ""
+    var name: String = ""
     
-    init(iconName: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.iconName = iconName
+    init(name: String = "", styles: Dictionary<String, Any> = [:]) {
+        self.name = name
         
         super.init(styles: styles)
     }
@@ -23,10 +23,16 @@ class IconComponent: LabelComponent {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("IconComponent::init(coder:) has not been implemented")
     }
     
     override func render() -> NodeType {
-        return ComponentNode(LabelComponent(text: "icon<" + iconName + ">"), in: self)
+        let computedStyles = mergeDictionaries(dict1: iconStyles, dict2: self.styles)
+        return ComponentNode(LabelComponent(text: String.fontString(name: self.name), styles: computedStyles), in: self)
     }
+    
+    let iconStyles: [String: Any] = [
+        "fontFamily": "SDKIcons",
+        "fontSize": 24,
+    ]
 }

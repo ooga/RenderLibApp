@@ -23,6 +23,7 @@ class BoxComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(styles: self.styles), in: self)
+        let computedStyles = self.styles
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
     }
 }

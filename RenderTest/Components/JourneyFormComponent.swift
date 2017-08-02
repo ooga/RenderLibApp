@@ -23,12 +23,11 @@ class JourneyFormComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        return ComponentNode(ViewComponent(), in: self).add(children: [
-            ComponentNode(FormComponent(), in: self).add(children: [
-                ComponentNode(AutocompleteInputComponent(icon: "origin", iconColor: UIColor.green, title: "Départ", placeholder: "Saisissez votre point de départ"), in: self),
-                ComponentNode(SeparatorComponent(), in: self),
-                ComponentNode(AutocompleteInputComponent(icon: "destination", iconColor: UIColor.magenta, title: "Arrivée", placeholder: "Saisissez votre point d'arrivée"), in: self)
-            ])
+        let computedStyles = self.styles
+        return ComponentNode(FormComponent(styles: computedStyles), in: self).add(children: [
+            ComponentNode(AutocompleteInputComponent(icon: "origin", iconColor: config.colors.origin, title: "Départ", placeholder: "Saisissez votre point de départ"), in: self),
+            ComponentNode(SeparatorComponent(), in: self),
+            ComponentNode(AutocompleteInputComponent(icon: "destination", iconColor: config.colors.destination, title: "Arrivée", placeholder: "Saisissez votre point d'arrivée"), in: self)
         ])
     }
 }
