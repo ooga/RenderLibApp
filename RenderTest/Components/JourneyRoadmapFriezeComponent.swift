@@ -19,16 +19,28 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("JourneyRoadmapFriezeComponent::init(coder:) has not been implemented")
     }
     
     override func render() -> NodeType {
-        let computedStyles = self.styles
+        let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(ContainerComponent(), in: self).add(children: [
-                ComponentNode(IconComponent(name: "angle-right"), in: self),
-                ComponentNode(JourneySectionModeComponent(), in: self)
+            ComponentNode(SeparatorComponent(), in: self),
+            ComponentNode(ViewComponent(styles: modeListStyles), in: self).add(children: [
+                ComponentNode(JourneySectionAbstractComponent(mode: "bus", duration: 1, lineCode: "6", color: UIColor.red), in: self),
+                ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 51, lineCode: "A", color: UIColor.blue), in: self),
+                ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 25, lineCode: "C1", color: UIColor.brown), in: self),
             ])
         ])
     }
+    
+    let containerStyles: [String: Any] = [
+        "flexDirection": YGFlexDirection.row,
+    ]
+    let modeListStyles: [String: Any] = [
+        "paddingTop": config.metrics.marginL,
+        "paddingBottom": config.metrics.marginL,
+        "flexDirection": YGFlexDirection.row,
+        "flexGrow": 1,
+    ]
 }

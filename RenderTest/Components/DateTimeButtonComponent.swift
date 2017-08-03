@@ -33,9 +33,11 @@ class DateTimeButtonComponent: ViewComponent {
     }
     
     let listRowStyles: [String: Any] = [
-        "paddingTop": config.metrics.margin,
+        "paddingTop": config.metrics.marginL,
+        "paddingLeft": 0,
         "paddingRight": 0,
-        "paddingBottom": 0,
+        "paddingBottom": config.metrics.margin,
+        "flexDirection": YGFlexDirection.row,
     ]
     let textStyles: [String: Any] = [
         "color": config.colors.white,
@@ -43,9 +45,10 @@ class DateTimeButtonComponent: ViewComponent {
     ]
     let viewStyles: [String: Any] = [
         "alignItems": YGAlign.flexEnd,
+        "flexGrow": 1,
     ]
     let iconStyles: [String: Any] = [
         "color": config.colors.white,
-        "marginBottom": config.metrics.margin,
+        "fontSize": 16,
     ]
 }

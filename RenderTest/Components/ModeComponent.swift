@@ -18,15 +18,19 @@ class ModeComponent: ViewComponent {
     }
     
     required init() {
-        fatalError("init() has not been implemented")
+        fatalError("ModeComponent::init() has not been implemented. You must specify the 'name' parameter in constructor")
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("ModeComponent::init(coder:) has not been implemented")
     }
     
     override func render() -> NodeType {
-        let computedStyles = self.styles
+        let computedStyles = mergeDictionaries(dict1: iconStyles, dict2: self.styles)
         return ComponentNode(IconComponent(name: name, styles: computedStyles), in: self)
     }
+    
+    let iconStyles = [
+        "color": config.colors.darkerGray,
+    ]
 }

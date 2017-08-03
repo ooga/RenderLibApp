@@ -31,6 +31,46 @@ struct Configuration {
         let destination = UIColor(red:0.89, green:0.00, blue:0.48, alpha:1.0)
     }
     
+    let iconFontCodes:[String: String] = [
+        "address": "\u{ea02}",
+        "administrative-region": "\u{ea03}",
+        "air": "\u{ea04}",
+        "arrow-details-down": "\u{ea05}",
+        "arrow-details-up": "\u{ea06}",
+        "arrow-direction-left": "\u{ea07}",
+        "arrow-direction-right": "\u{ea08}",
+        "arrow-direction-straight": "\u{ea09}",
+        "arrow-left-long": "\u{ea0a}",
+        "arrow-right-long": "\u{ea0b}",
+        "arrow-right": "\u{ea0c}",
+        "bike": "\u{ea0d}",
+        "boat": "\u{ea0e}",
+        "bss": "\u{ea0f}",
+        "bus": "\u{ea10}",
+        "calendar": "\u{ea11}",
+        "car": "\u{ea12}",
+        "clock": "\u{ea13}",
+        "coach": "\u{ea14}",
+        "destination": "\u{ea15}",
+        "direction": "\u{ea16}",
+        "edit": "\u{ea17}",
+        "funicular": "\u{ea18}",
+        "geolocation": "\u{ea19}",
+        "home": "\u{ea1a}",
+        "metro": "\u{ea1b}",
+        "notice": "\u{ea1c}",
+        "origin": "\u{ea1d}",
+        "poi": "\u{ea1e}",
+        "realtime": "\u{ea1f}",
+        "shuttle": "\u{ea20}",
+        "stop": "\u{ea21}",
+        "taxi": "\u{ea22}",
+        "train": "\u{ea23}",
+        "tramway": "\u{ea24}",
+        "walking": "\u{ea25}",
+        "work": "\u{ea26}",
+    ]
+    
     let colors = ColorConfiguration()
     let metrics = MetricConfiguration()
 }

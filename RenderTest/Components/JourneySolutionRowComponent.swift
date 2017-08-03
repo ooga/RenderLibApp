@@ -10,7 +10,18 @@ import Foundation
 import Render
 
 class JourneySolutionRowComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
+    var departureTime: Int = 0
+    var arrivalTime: Int = 0
+    var totalDuration: Int = 0
+    var walkingDuration: Int = 0
+    var walkingDistance: Int = 0
+    
+    init(departureTime: Int, arrivalTime: Int, totalDuration: Int, walkingDuration: Int, walkingDistance: Int, styles: Dictionary<String, Any> = [:]) {
+        self.departureTime = departureTime
+        self.arrivalTime = arrivalTime
+        self.totalDuration = totalDuration
+        self.walkingDuration = walkingDuration
+        self.walkingDistance = walkingDistance
         super.init(styles: styles)
     }
     
@@ -19,21 +30,36 @@ class JourneySolutionRowComponent: ViewComponent {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("JourneySolutionRowComponent::init(coder:) has not been implemented")
     }
     
     override func render() -> NodeType {
+        let timesText = timeText(timestamp: departureTime) + " - " + timeText(timestamp: arrivalTime)
+        let walkingText = "Dont " + durationText(minutes: self.walkingDuration) + " à pied (" + distanceText(meters: self.walkingDistance) + ")"
         let computedStyles = self.styles
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(ViewComponent(), in: self).add(children: [
-                ComponentNode(ViewComponent(), in: self).add(children: [
-                    ComponentNode(TextComponent(text: "19:30 - 20:06"), in: self),
-                    ComponentNode(DurationComponent(minutes: 57), in: self),
+                ComponentNode(ViewComponent(styles: journeyHeaderStyles), in: self).add(children: [
+                    ComponentNode(TextComponent(text: timesText, styles: timesStyles), in: self),
+                    ComponentNode(DurationComponent(minutes: self.totalDuration, styles: durationStyles), in: self),
                 ]),
                 ComponentNode(SeparatorComponent(), in: self),
                 ComponentNode(JourneyRoadmapFriezeComponent(), in: self),
-                ComponentNode(TextComponent(text: "Dont 8 min à pied (910m)"), in: self),
+                ComponentNode(TextComponent(text: walkingText), in: self),
             ]),
         ])
     }
+    
+    let journeyHeaderStyles: [String: Any] = [
+        "flexDirection": YGFlexDirection.row,
+    ]
+    let timesStyles: [String: Any] = [
+        "color": config.colors.darkerGray,
+        "fontWeight": "bold",
+    ]
+    let durationStyles: [String: Any] = [
+        "alignItems": YGAlign.flexEnd,
+        "justifyContent": YGJustify.flexEnd,
+        "flexGrow": 1,
+    ]
 }

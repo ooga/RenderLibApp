@@ -44,7 +44,7 @@ class StylizedComponent: StatelessComponentView {
             case "display": layout.display = value as! YGDisplay; break
             case "flexGrow": layout.flexGrow = CGFloat(value as! Int); break
             case "flexShrink": layout.flexShrink = CGFloat(value as! Int); break
-            case "flex": break // Don't know how to emulate this in Yoga
+            case "flexBasis": layout.flexBasis = value as! CGFloat; break
             case "left": layout.left = CGFloat(value as! Int); break
             case "top": layout.top = CGFloat(value as! Int); break
             case "right": layout.right = CGFloat(value as! Int); break
@@ -83,6 +83,13 @@ class StylizedComponent: StatelessComponentView {
             case "minHeight": layout.minHeight = CGFloat(value as! Int); break
             case "maxWidth": layout.maxWidth = CGFloat(value as! Int); break
             case "maxHeight": layout.maxHeight = CGFloat(value as! Int); break
+            case "shadowRadius": view.layer.shadowRadius = value as! CGFloat; break
+            case "shadowOpacity": view.layer.shadowOpacity = Float(value as! Double); break
+            case "shadowColor": view.layer.shadowColor = (value as AnyObject).cgColor; break
+            case "shadowOffset":
+                view.layer.masksToBounds = false;
+                view.layer.shadowOffset = CGSize(width: 0, height: 0);
+                break
             default: break
             }
         }

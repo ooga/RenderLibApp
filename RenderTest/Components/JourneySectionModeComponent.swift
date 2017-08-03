@@ -25,9 +25,7 @@ class JourneySectionModeComponent: ViewComponent {
     override func render() -> NodeType {
         let computedStyles = self.styles
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(ModeComponent(name: "walk"), in: self),
-            ComponentNode(ModeComponent(name: "train"), in: self),
-            ComponentNode(ModeComponent(name: "walk"), in: self),
+            ComponentNode(ModeComponent(name: "walking"), in: self),
         ])
     }
 }

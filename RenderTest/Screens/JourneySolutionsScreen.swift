@@ -12,7 +12,7 @@ import Render
 class JourneySolutionsScreen: ScreenComponent {
     override func render() -> NodeType {
         return ComponentNode(ScreenComponent(), in: self).add(children: [
-            ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
+            ComponentNode(ViewComponent(), in: self).add(children: [
                 ComponentNode(ContainerComponent(styles: containerStyles), in: self).add(children: [
                     ComponentNode(JourneyFormComponent(), in: self),
                     ComponentNode(DateTimeButtonComponent(), in: self)
@@ -21,14 +21,13 @@ class JourneySolutionsScreen: ScreenComponent {
                     ComponentNode(JourneySolutionComponent(), in: self),
                     ComponentNode(JourneySolutionComponent(), in: self),
                     ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
+                    ComponentNode(JourneySolutionComponent(), in: self),
                 ])
             ])
         ])
     }
     
-    let viewStyles = [
-        "backgroundColor": UIColor.red
-    ]
     let containerStyles = [
         "backgroundColor": config.colors.tertiary
     ]

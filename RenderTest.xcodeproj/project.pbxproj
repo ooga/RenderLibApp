@@ -34,6 +34,7 @@
 		A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1F31F30A07B00D2BB8F /* Icons.swift */; };
 		A12FE1FA1F30B81400D2BB8F /* SDKIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A12FE1F91F30B81400D2BB8F /* SDKIcons.ttf */; };
 		A135E0301F31BAD200191344 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E02F1F31BAD200191344 /* Configuration.swift */; };
+		A135E0321F31C75D00191344 /* JourneySectionAbstractComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135E0311F31C75D00191344 /* JourneySectionAbstractComponent.swift */; };
 		A15734CA1F2B334300C860FC /* ScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15734C91F2B334300C860FC /* ScreenComponent.swift */; };
 		A16F65531F28924B0009A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F65521F28924B0009A233 /* AppDelegate.swift */; };
 		A16F65581F28924B0009A233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16F65561F28924B0009A233 /* Main.storyboard */; };
@@ -44,6 +45,10 @@
 		A17F50D51F28BF7E00AF8F1C /* JourneySolutionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */; };
 		A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D41F28BF7E00AF8F1C /* ViewController.swift */; };
 		A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */; };
+		A1819C0B1F31CBB200728894 /* LineCodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C0A1F31CBB200728894 /* LineCodeComponent.swift */; };
+		A1819C0D1F31D1AB00728894 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C0C1F31D1AB00728894 /* Metrics.swift */; };
+		A1819C0F1F31D51100728894 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C0E1F31D51100728894 /* Color.swift */; };
+		A1819C111F31D74E00728894 /* JourneySectionSegmentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */; };
 		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
 		A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */; };
 		A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99D181F2F75FF00A3C767 /* Styles.swift */; };
@@ -98,6 +103,7 @@
 		A12FE1F31F30A07B00D2BB8F /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icons.swift; path = Util/Icons.swift; sourceTree = "<group>"; };
 		A12FE1F91F30B81400D2BB8F /* SDKIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDKIcons.ttf; sourceTree = "<group>"; };
 		A135E02F1F31BAD200191344 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Resources/Config/Configuration.swift; sourceTree = "<group>"; };
+		A135E0311F31C75D00191344 /* JourneySectionAbstractComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySectionAbstractComponent.swift; path = Components/JourneySectionAbstractComponent.swift; sourceTree = "<group>"; };
 		A15734C91F2B334300C860FC /* ScreenComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenComponent.swift; path = Components/Primitive/ScreenComponent.swift; sourceTree = "<group>"; };
 		A16F654F1F28924B0009A233 /* RenderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RenderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16F65521F28924B0009A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +120,10 @@
 		A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsController.swift; path = Controllers/JourneySolutionsController.swift; sourceTree = "<group>"; };
 		A17F50D41F28BF7E00AF8F1C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		A17F50D71F28BFD600AF8F1C /* BoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxComponent.swift; path = Components/BoxComponent.swift; sourceTree = "<group>"; };
+		A1819C0A1F31CBB200728894 /* LineCodeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineCodeComponent.swift; path = Components/LineCodeComponent.swift; sourceTree = "<group>"; };
+		A1819C0C1F31D1AB00728894 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = Util/Metrics.swift; sourceTree = "<group>"; };
+		A1819C0E1F31D51100728894 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Util/Color.swift; sourceTree = "<group>"; };
+		A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySectionSegmentComponent.swift; path = Components/JourneySectionSegmentComponent.swift; sourceTree = "<group>"; };
 		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
 		A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Components/ContainerComponent.swift; sourceTree = "<group>"; };
 		A1A99D181F2F75FF00A3C767 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Util/Styles.swift; sourceTree = "<group>"; };
@@ -190,6 +200,8 @@
 				A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */,
 				A1A99D181F2F75FF00A3C767 /* Styles.swift */,
 				A12FE1F31F30A07B00D2BB8F /* Icons.swift */,
+				A1819C0C1F31D1AB00728894 /* Metrics.swift */,
+				A1819C0E1F31D51100728894 /* Color.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -281,9 +293,12 @@
 				A103CE491F28DC9A00715FAB /* IconComponent.swift */,
 				A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */,
 				A103CE571F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift */,
+				A135E0311F31C75D00191344 /* JourneySectionAbstractComponent.swift */,
 				A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */,
+				A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */,
 				A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */,
 				A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */,
+				A1819C0A1F31CBB200728894 /* LineCodeComponent.swift */,
 				A103CE4F1F28EA1D00715FAB /* ListRow.swift */,
 				A103CE511F28ED6300715FAB /* ListViewComponent.swift */,
 				A1139F2F1F29E1FD00FD467A /* ModeComponent.swift */,
@@ -601,6 +616,7 @@
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
 				A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */,
 				A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */,
+				A135E0321F31C75D00191344 /* JourneySectionAbstractComponent.swift in Sources */,
 				A103CE461F28DAFB00715FAB /* FormComponent.swift in Sources */,
 				A135E0301F31BAD200191344 /* Configuration.swift in Sources */,
 				A103CE481F28DB7F00715FAB /* AutocompleteInputComponent.swift in Sources */,
@@ -609,6 +625,8 @@
 				A103CE5C1F28F52300715FAB /* DurationComponent.swift in Sources */,
 				A103CE4C1F28DE3200715FAB /* TextComponent.swift in Sources */,
 				A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */,
+				A1819C111F31D74E00728894 /* JourneySectionSegmentComponent.swift in Sources */,
+				A1819C0B1F31CBB200728894 /* LineCodeComponent.swift in Sources */,
 				A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */,
 				A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */,
 				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
@@ -616,6 +634,8 @@
 				A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */,
 				A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */,
 				A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */,
+				A1819C0D1F31D1AB00728894 /* Metrics.swift in Sources */,
+				A1819C0F1F31D51100728894 /* Color.swift in Sources */,
 				A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */,
 				A17F50D61F28BF7E00AF8F1C /* ViewController.swift in Sources */,
 				A103CE561F28F0E000715FAB /* JourneySolutionRowComponent.swift in Sources */,

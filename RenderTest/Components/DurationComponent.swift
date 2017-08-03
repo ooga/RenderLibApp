@@ -13,6 +13,7 @@ class DurationComponent: ViewComponent {
     var minutes: Int = 0
     
     init(minutes: Int = 0, styles: Dictionary<String, Any> = [:]) {
+        self.minutes = minutes
         super.init(styles: styles)
     }
     
@@ -25,11 +26,22 @@ class DurationComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        let computedStyles = mergeDictionaries(dict1: textStyles, dict2: self.styles)
-        return ComponentNode(TextComponent(text: "57", styles: computedStyles), in: self)
+        let computedStyles = self.styles
+        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+            ComponentNode(TextComponent(text: String(self.minutes), styles: digitsStyles), in: self),
+            ComponentNode(TextComponent(text: "min", styles: abbrStyles), in: self)
+        ])
     }
     
-    let textStyles:[String: Any] = [
+    let digitsStyles: [String: Any] = [
         "color": config.colors.tertiary,
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "marginBottom": -4,
+    ]
+    let abbrStyles: [String: Any] = [
+        "color": config.colors.tertiary,
+        "fontSize": 12,
+        "marginBottom": 4,
     ]
 }
