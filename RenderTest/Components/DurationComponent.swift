@@ -10,15 +10,15 @@ import Foundation
 import Render
 
 class DurationComponent: ViewComponent {
-    var minutes: Int = 0
+    var minutes: Int32? = 0
     
-    init(minutes: Int = 0, styles: Dictionary<String, Any> = [:]) {
+    init(minutes: Int32? = 0, key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.minutes = minutes
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,8 +27,8 @@ class DurationComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = self.styles
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: String(self.minutes), styles: digitsStyles), in: self),
+        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
+            ComponentNode(TextComponent(text: String(describing: self.minutes), styles: digitsStyles), in: self),
             ComponentNode(TextComponent(text: "min", styles: abbrStyles), in: self)
         ])
     }

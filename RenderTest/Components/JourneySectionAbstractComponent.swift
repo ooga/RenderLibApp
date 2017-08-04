@@ -14,17 +14,17 @@ class JourneySectionAbstractComponent: ViewComponent {
     var lineCode: String = "<code>"
     var color: UIColor = UIColor()
     
-    init(mode: String, duration: Int, lineCode: String = "", color: UIColor = UIColor(), styles: Dictionary<String, Any> = [:]) {
+    init(mode: String, duration: Int, lineCode: String = "", color: UIColor = UIColor(), key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.mode = mode
         self.duration = duration
         self.lineCode = lineCode
         self.color = color
         
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,12 +38,12 @@ class JourneySectionAbstractComponent: ViewComponent {
             "marginEnd": config.metrics.margin,
         ]
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
-                ComponentNode(ModeComponent(name: self.mode, styles: modeStyles), in: self),
-                ComponentNode(LineCodeComponent(code: self.lineCode, color: self.color), in: self),
+        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
+            ComponentNode(ViewComponent(key: self.uniqueKey + "/view/view", styles: viewStyles), in: self).add(children: [
+                ComponentNode(ModeComponent(name: self.mode, key: self.uniqueKey + "/view/view/mode", styles: modeStyles), in: self),
+                ComponentNode(LineCodeComponent(code: self.lineCode, color: self.color, key: self.uniqueKey + "/view/view/linecode"), in: self),
             ]),
-            ComponentNode(JourneySectionSegmentComponent(color: self.color), in: self),
+            ComponentNode(JourneySectionSegmentComponent(color: self.color, key: self.uniqueKey + "/view/journeysectionsegment"), in: self),
         ])
     }
     let viewStyles: [String: Any] = [

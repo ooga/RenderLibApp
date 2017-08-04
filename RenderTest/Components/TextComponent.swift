@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class TextComponent: LabelComponent {
-    override init(text: String = "", styles: Dictionary<String, Any> = [:]) {
-        super.init(text: text, styles: styles)
+    override init(text: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
+        super.init(text: text, key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class TextComponent: LabelComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: textStyles, dict2: self.styles)
-        return ComponentNode(LabelComponent(text: text, styles: computedStyles), in: self)
+        return ComponentNode(LabelComponent(text: text, styles: computedStyles), in: self, key: "label")
     }
     
     let textStyles: [String: Any] = [

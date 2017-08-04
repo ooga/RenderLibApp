@@ -9,13 +9,13 @@
 import Foundation
 import Render
 
-class DateTimeButtonComponent: ViewComponent {
-    required override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+class DateTimeButtonComponent: ButtonComponent {
+    required init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +24,9 @@ class DateTimeButtonComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: listRowStyles, dict2: self.styles)
-        return ComponentNode(ListRowComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ButtonComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(TextComponent(text: "Départ : Ven. 21 Jui. - 13h30", styles: textStyles), in: self),
-            ComponentNode(ViewComponent(styles: viewStyles), in: self).add(children: [
+            ComponentNode(ViewComponent(key: "", styles: viewStyles), in: self).add(children: [
                 ComponentNode(IconComponent(name: "arrow-right", styles: iconStyles), in: self)
             ])
         ])

@@ -11,13 +11,13 @@ import Render
 class JourneySectionSegmentComponent: ViewComponent {
     var color: UIColor = UIColor()
     
-    init(color: UIColor, styles: Dictionary<String, Any> = [:]) {
+    init(color: UIColor, key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.color = color
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +31,6 @@ class JourneySectionSegmentComponent: ViewComponent {
             "height": 4,
         ]
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self)
     }
 }

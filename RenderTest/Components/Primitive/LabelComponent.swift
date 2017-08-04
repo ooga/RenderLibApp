@@ -9,13 +9,13 @@
 import Foundation
 import Render
 
-class LabelComponent: StylizedComponent {
+class LabelComponentStateful<S: StateType>: StylizedComponent<S> {
     var text: String = ""
     var sharedFont: UIFont = UIFont.systemFont(ofSize: 14)
     
-    init(text: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(text: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.text = text
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init?(coder aDecoder: NSCoder) {

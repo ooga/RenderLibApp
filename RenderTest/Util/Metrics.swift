@@ -8,11 +8,14 @@
 
 import Foundation
 
-func timeText(timestamp: Int) -> String {
+func timeText(isoString: String) -> String {
+    /*
     let date: Date = Date(timeIntervalSince1970: TimeInterval(timestamp))
     let formatter: DateFormatter = DateFormatter()
     formatter.dateFormat = config.metrics.timeFormat
     return formatter.string(from: date)
+    */
+    return "<time>"
 }
 
 func durationText(minutes: Int) -> String {

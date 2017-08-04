@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class FormComponent: ViewComponent {
-    required override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    required override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "<empty!>", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class FormComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: formStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self)
     }
     
     let formStyles: [String: Any] = [

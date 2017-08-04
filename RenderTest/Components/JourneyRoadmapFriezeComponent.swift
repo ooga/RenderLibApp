@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class JourneyRoadmapFriezeComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +24,9 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
             ComponentNode(SeparatorComponent(), in: self),
-            ComponentNode(ViewComponent(styles: modeListStyles), in: self).add(children: [
+            ComponentNode(ViewComponent(key: "", styles: modeListStyles), in: self).add(children: [
                 ComponentNode(JourneySectionAbstractComponent(mode: "bus", duration: 100, lineCode: "6", color: UIColor.red), in: self),
                 ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 51, lineCode: "A", color: UIColor.blue), in: self),
                 ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 25, lineCode: "C1", color: UIColor.brown), in: self),

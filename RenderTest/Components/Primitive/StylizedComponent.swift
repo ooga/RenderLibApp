@@ -9,11 +9,13 @@
 import Foundation
 import Render
 
-class StylizedComponent: StatelessComponentView {
+class StylizedComponent<S: StateType>: ComponentView<S> {
     var styles: Dictionary<String, Any> = [:]
+    var uniqueKey: String = "<empty!>"
     
-    init(styles: Dictionary<String, Any>) {
+    init(key: String, styles: Dictionary<String, Any> = [:]) {
         super.init()
+        self.uniqueKey = key
         self.styles = styles
     }
     

@@ -9,13 +9,13 @@
 import Foundation
 import Render
 
-class ScreenComponent: StylizedComponent {
-    override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+class ScreenComponentStateful<S: StateType>: StylizedComponent<S> {
+    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {

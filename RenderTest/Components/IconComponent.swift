@@ -12,14 +12,14 @@ import Render
 class IconComponent: LabelComponent {
     var name: String = ""
     
-    init(name: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(name: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.name = name
         
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,7 +28,7 @@ class IconComponent: LabelComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: iconStyles, dict2: self.styles)
-        return ComponentNode(LabelComponent(text: String.fontString(name: self.name), styles: computedStyles), in: self)
+        return ComponentNode(LabelComponent(text: String.fontString(name: self.name), key: "", styles: computedStyles), in: self)
     }
     
     let iconStyles: [String: Any] = [

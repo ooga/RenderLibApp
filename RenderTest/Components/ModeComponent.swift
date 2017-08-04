@@ -12,9 +12,9 @@ import Render
 class ModeComponent: ViewComponent {
     var name: String = ""
     
-    init(name: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(name: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.name = name
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {

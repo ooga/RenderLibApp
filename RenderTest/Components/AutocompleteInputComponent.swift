@@ -14,17 +14,17 @@ class AutocompleteInputComponent: ButtonComponent {
     var title: String = ""
     var placeholder: String = ""
     
-    init(icon: String = "", iconColor: UIColor = UIColor(), title: String = "", placeholder: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(icon: String = "", iconColor: UIColor = UIColor(), title: String = "", placeholder: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.icon = icon
         self.iconColor = iconColor
         self.title = title
         self.placeholder = placeholder
         
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,10 +35,10 @@ class AutocompleteInputComponent: ButtonComponent {
         let iconColorStyles:[String: Any] = ["color": self.iconColor as Any]
         let iconComputedStyles = mergeDictionaries(dict1: iconColorStyles, dict2: iconStyles)
         let computedStyles = self.styles
-        return ComponentNode(ButtonComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(ViewComponent(styles: rowStyles), in: self).add(children: [
-                ComponentNode(ViewComponent(styles: containerStyles), in: self).add(children: [
-                    ComponentNode(IconComponent(name: self.icon, styles: iconComputedStyles), in: self),
+        return ComponentNode(ButtonComponent(key: self.uniqueKey + "/button", styles: computedStyles), in: self).add(children: [
+            ComponentNode(ViewComponent(key: "", styles: rowStyles), in: self).add(children: [
+                ComponentNode(ViewComponent(key: "", styles: containerStyles), in: self).add(children: [
+                    ComponentNode(IconComponent(name: self.icon, key: "", styles: iconComputedStyles), in: self),
                     ComponentNode(ViewComponent(), in: self).add(children: [
                         ComponentNode(PlaceComponent(), in: self)
                     ])

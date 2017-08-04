@@ -8,14 +8,18 @@
 
 import Foundation
 import Render
+import NavitiaSDK
 
 class JourneySolutionComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    var journey: Journey = Journey()
+    
+    init(journey: Journey, key: String = "", styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
+        self.journey = journey
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,8 +28,8 @@ class JourneySolutionComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: listStyles, dict2: self.styles)
-        return ComponentNode(ListRowComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(JourneySolutionRowComponent(departureTime: 0, arrivalTime: 0, totalDuration: 47, walkingDuration: 8, walkingDistance: 910), in: self)
+        return ComponentNode(ListRowComponent(key: "", styles: computedStyles), in: self).add(children: [
+            ComponentNode(JourneySolutionRowComponent(departureTime: journey.departureDateTime!, arrivalTime: journey.arrivalDateTime!, totalDuration: journey.duration, walkingDuration: journey.durations?.walking, walkingDistance: 0), in: self)
         ])
     }
     

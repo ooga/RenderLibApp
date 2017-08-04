@@ -9,13 +9,13 @@
 import Foundation
 import Render
 
-class PlaceComponent: StylizedComponent {
-    required override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+class PlaceComponent: ViewComponent {
+    required override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class PlaceComponent: StylizedComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
             ComponentNode(TextComponent(text: "20 rue Hector Malot,", styles: nameStyles), in: self),
             ComponentNode(TextComponent(text: "75012 Paris"), in: self),
         ])

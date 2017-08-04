@@ -9,12 +9,12 @@
 import Render
 
 class JourneyWalkingAbstractComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any> = [:]) {
-        super.init(styles: styles)
+    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,7 +23,7 @@ class JourneyWalkingAbstractComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
             ComponentNode(TextComponent(text: "Dont"), in: self),
             ComponentNode(TextComponent(text: "8 min", styles: durationStyles), in: self),
             ComponentNode(TextComponent(text: "à pied (910m)"), in: self),

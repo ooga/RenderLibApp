@@ -12,10 +12,10 @@ class LineCodeComponent: ViewComponent {
     var code: String = ""
     var color: UIColor = UIColor()
     
-    init(code: String, color: UIColor, styles: Dictionary<String, Any> = [:]) {
+    init(code: String, color: UIColor, key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.code = code
         self.color = color
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
@@ -38,7 +38,7 @@ class LineCodeComponent: ViewComponent {
             "fontWeight": "bold",
         ]
         let computedStyles = mergeDictionaries(dict1: codeStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
             ComponentNode(TextComponent(text: code, styles: textStyles), in: self)
         ])
     }

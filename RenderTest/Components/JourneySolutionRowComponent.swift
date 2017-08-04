@@ -10,23 +10,23 @@ import Foundation
 import Render
 
 class JourneySolutionRowComponent: ViewComponent {
-    var departureTime: Int = 0
-    var arrivalTime: Int = 0
-    var totalDuration: Int = 0
-    var walkingDuration: Int = 0
+    var departureTime: String = ""
+    var arrivalTime: String = ""
+    var totalDuration: Int32? = 0
+    var walkingDuration: Int32? = 0
     var walkingDistance: Int = 0
     
-    init(departureTime: Int, arrivalTime: Int, totalDuration: Int, walkingDuration: Int, walkingDistance: Int, styles: Dictionary<String, Any> = [:]) {
+    init(departureTime: String, arrivalTime: String, totalDuration: Int32?, walkingDuration: Int32?, walkingDistance: Int, key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.departureTime = departureTime
         self.arrivalTime = arrivalTime
         self.totalDuration = totalDuration
         self.walkingDuration = walkingDuration
         self.walkingDistance = walkingDistance
-        super.init(styles: styles)
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,11 +34,11 @@ class JourneySolutionRowComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        let timesText = timeText(timestamp: departureTime) + " - " + timeText(timestamp: arrivalTime)
+        let timesText = timeText(isoString: departureTime) + " - " + timeText(isoString: arrivalTime)
         let computedStyles = self.styles
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
             ComponentNode(ViewComponent(), in: self).add(children: [
-                ComponentNode(ViewComponent(styles: journeyHeaderStyles), in: self).add(children: [
+                ComponentNode(ViewComponent(key: "", styles: journeyHeaderStyles), in: self).add(children: [
                     ComponentNode(TextComponent(text: timesText, styles: timesStyles), in: self),
                     ComponentNode(DurationComponent(minutes: self.totalDuration, styles: durationStyles), in: self),
                 ]),

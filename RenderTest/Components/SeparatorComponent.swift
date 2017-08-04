@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class SeparatorComponent: ViewComponent {
-    required override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    required override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class SeparatorComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: lineStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self)
+        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self)
     }
     
     let lineStyles: [String: Any] = [

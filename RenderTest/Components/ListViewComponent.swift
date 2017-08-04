@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class ListViewComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {

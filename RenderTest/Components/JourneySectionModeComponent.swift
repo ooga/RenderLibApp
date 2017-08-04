@@ -10,12 +10,12 @@ import Foundation
 import Render
 
 class JourneySectionModeComponent: ViewComponent {
-    override init(styles: Dictionary<String, Any>) {
-        super.init(styles: styles)
+    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+        super.init(key: key, styles: styles)
     }
     
     required init() {
-        super.init(styles: [:])
+        super.init(key: "", styles: [:])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,7 @@ class JourneySectionModeComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = self.styles
-        return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
             ComponentNode(ModeComponent(name: "walking"), in: self),
         ])
     }
