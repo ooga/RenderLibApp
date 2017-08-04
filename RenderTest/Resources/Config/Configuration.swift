@@ -15,6 +15,9 @@ struct Configuration {
         let marginS = 4
         let margin = 8
         let marginL = 16
+        let timeFormat = "hh:mm"
+        let shortDateFormat = ""
+        let longDateFormat = ""
     }
     
     struct ColorConfiguration {

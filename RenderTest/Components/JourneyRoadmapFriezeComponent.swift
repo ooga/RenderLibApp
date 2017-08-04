@@ -27,7 +27,7 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(SeparatorComponent(), in: self),
             ComponentNode(ViewComponent(styles: modeListStyles), in: self).add(children: [
-                ComponentNode(JourneySectionAbstractComponent(mode: "bus", duration: 1, lineCode: "6", color: UIColor.red), in: self),
+                ComponentNode(JourneySectionAbstractComponent(mode: "bus", duration: 100, lineCode: "6", color: UIColor.red), in: self),
                 ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 51, lineCode: "A", color: UIColor.blue), in: self),
                 ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 25, lineCode: "C1", color: UIColor.brown), in: self),
             ])
@@ -42,5 +42,6 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
         "paddingBottom": config.metrics.marginL,
         "flexDirection": YGFlexDirection.row,
         "flexGrow": 1,
+        "marginEnd": config.metrics.margin * -1
     ]
 }

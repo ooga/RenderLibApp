@@ -9,13 +9,26 @@
 import Foundation
 
 func timeText(timestamp: Int) -> String {
-    return "<time>"
+    let date: Date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+    let formatter: DateFormatter = DateFormatter()
+    formatter.dateFormat = config.metrics.timeFormat
+    return formatter.string(from: date)
 }
 
 func durationText(minutes: Int) -> String {
-    return "<duration>"
+    if (minutes < 60) {
+        return String(minutes) + " min"
+    } else {
+        let hours = minutes / 60
+        let remainingMinutes = minutes
+        return String(hours) + " h " + String(remainingMinutes)
+    }
 }
 
 func distanceText(meters: Int) -> String {
-    return "<distance>"
+    if (meters < 1000) {
+        return String(meters) + "m"
+    } else {
+        return String(meters / 1000) + " km"
+    }
 }

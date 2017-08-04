@@ -35,6 +35,7 @@ class JourneySectionAbstractComponent: ViewComponent {
         let containerStyles: [String: Any] = [
             "fontSize": 16,
             "flexGrow": self.duration,
+            "marginEnd": config.metrics.margin,
         ]
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [

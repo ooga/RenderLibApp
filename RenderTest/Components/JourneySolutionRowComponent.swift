@@ -35,7 +35,6 @@ class JourneySolutionRowComponent: ViewComponent {
     
     override func render() -> NodeType {
         let timesText = timeText(timestamp: departureTime) + " - " + timeText(timestamp: arrivalTime)
-        let walkingText = "Dont " + durationText(minutes: self.walkingDuration) + " à pied (" + distanceText(meters: self.walkingDistance) + ")"
         let computedStyles = self.styles
         return ComponentNode(ViewComponent(styles: computedStyles), in: self).add(children: [
             ComponentNode(ViewComponent(), in: self).add(children: [
@@ -45,7 +44,7 @@ class JourneySolutionRowComponent: ViewComponent {
                 ]),
                 ComponentNode(SeparatorComponent(), in: self),
                 ComponentNode(JourneyRoadmapFriezeComponent(), in: self),
-                ComponentNode(TextComponent(text: walkingText), in: self),
+                ComponentNode(JourneyWalkingAbstractComponent(), in: self),
             ]),
         ])
     }

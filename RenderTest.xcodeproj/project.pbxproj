@@ -49,6 +49,7 @@
 		A1819C0D1F31D1AB00728894 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C0C1F31D1AB00728894 /* Metrics.swift */; };
 		A1819C0F1F31D51100728894 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C0E1F31D51100728894 /* Color.swift */; };
 		A1819C111F31D74E00728894 /* JourneySectionSegmentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */; };
+		A1819C131F33722C00728894 /* JourneyWalkingAbstractComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */; };
 		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
 		A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */; };
 		A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99D181F2F75FF00A3C767 /* Styles.swift */; };
@@ -124,6 +125,7 @@
 		A1819C0C1F31D1AB00728894 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = Util/Metrics.swift; sourceTree = "<group>"; };
 		A1819C0E1F31D51100728894 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Util/Color.swift; sourceTree = "<group>"; };
 		A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySectionSegmentComponent.swift; path = Components/JourneySectionSegmentComponent.swift; sourceTree = "<group>"; };
+		A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneyWalkingAbstractComponent.swift; path = Components/JourneyWalkingAbstractComponent.swift; sourceTree = "<group>"; };
 		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
 		A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Components/ContainerComponent.swift; sourceTree = "<group>"; };
 		A1A99D181F2F75FF00A3C767 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Util/Styles.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */,
 				A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */,
 				A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */,
+				A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */,
 				A1819C0A1F31CBB200728894 /* LineCodeComponent.swift */,
 				A103CE4F1F28EA1D00715FAB /* ListRow.swift */,
 				A103CE511F28ED6300715FAB /* ListViewComponent.swift */,
@@ -626,6 +629,7 @@
 				A103CE4C1F28DE3200715FAB /* TextComponent.swift in Sources */,
 				A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */,
 				A1819C111F31D74E00728894 /* JourneySectionSegmentComponent.swift in Sources */,
+				A1819C131F33722C00728894 /* JourneyWalkingAbstractComponent.swift in Sources */,
 				A1819C0B1F31CBB200728894 /* LineCodeComponent.swift in Sources */,
 				A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */,
 				A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */,
