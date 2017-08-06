@@ -28,9 +28,23 @@ class JourneySolutionComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: listStyles, dict2: self.styles)
+        let walkingDistance = getWalkingDistance(sections: journey.sections!)
+        
         return ComponentNode(ListRowComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(JourneySolutionRowComponent(departureTime: journey.departureDateTime!, arrivalTime: journey.arrivalDateTime!, totalDuration: journey.duration, walkingDuration: journey.durations?.walking, walkingDistance: 0), in: self)
+            ComponentNode(JourneySolutionRowComponent(departureTime: journey.departureDateTime!, arrivalTime: journey.arrivalDateTime!, totalDuration: journey.duration, walkingDuration: journey.durations?.walking, walkingDistance: walkingDistance, sections: journey.sections!), in: self)
         ])
+    }
+    
+    func getWalkingDistance(sections: [Section]) -> Int32 {
+        var distance: Int32 = 0
+        for section in sections {
+            if section.type == "street_network" && section.mode == "walking" {
+                for segment in section.path! {
+                    distance += segment.length!
+                }
+            }
+        }
+        return distance
     }
     
     let listStyles:[String: Any] = [

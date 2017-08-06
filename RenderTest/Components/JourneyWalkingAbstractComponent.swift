@@ -9,8 +9,13 @@
 import Render
 
 class JourneyWalkingAbstractComponent: ViewComponent {
-    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+    var duration: Int32 = 0
+    var distance: Int32 = 0
+    
+    init(duration: Int32, distance: Int32, key: String, styles: Dictionary<String, Any> = [:]) {
         super.init(key: key, styles: styles)
+        self.duration = duration
+        self.distance = distance
     }
     
     required init() {
@@ -24,9 +29,9 @@ class JourneyWalkingAbstractComponent: ViewComponent {
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: "Dont"), in: self),
-            ComponentNode(TextComponent(text: "8 min", styles: durationStyles), in: self),
-            ComponentNode(TextComponent(text: "à pied (910m)"), in: self),
+            ComponentNode(TextComponent(text: "Dont "), in: self),
+            ComponentNode(TextComponent(text: String(self.duration / 60) + " min", styles: durationStyles), in: self),
+            ComponentNode(TextComponent(text: " à pied (" + distanceText(meters: self.distance) + ")"), in: self),
         ])
     }
 
