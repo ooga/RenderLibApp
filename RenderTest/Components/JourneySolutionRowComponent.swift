@@ -8,20 +8,23 @@
 
 import Foundation
 import Render
+import NavitiaSDK
 
 class JourneySolutionRowComponent: ViewComponent {
     var departureTime: String = ""
     var arrivalTime: String = ""
     var totalDuration: Int32? = 0
     var walkingDuration: Int32? = 0
-    var walkingDistance: Int = 0
+    var walkingDistance: Int32? = 0
+    var sections: [Section] = []
     
-    init(departureTime: String, arrivalTime: String, totalDuration: Int32?, walkingDuration: Int32?, walkingDistance: Int, key: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(departureTime: String, arrivalTime: String, totalDuration: Int32?, walkingDuration: Int32?, walkingDistance: Int32?, sections: [Section], key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.departureTime = departureTime
         self.arrivalTime = arrivalTime
         self.totalDuration = totalDuration
         self.walkingDuration = walkingDuration
         self.walkingDistance = walkingDistance
+        self.sections = sections
         super.init(key: key, styles: styles)
     }
     
@@ -40,11 +43,11 @@ class JourneySolutionRowComponent: ViewComponent {
             ComponentNode(ViewComponent(), in: self).add(children: [
                 ComponentNode(ViewComponent(key: "", styles: journeyHeaderStyles), in: self).add(children: [
                     ComponentNode(TextComponent(text: timesText, styles: timesStyles), in: self),
-                    ComponentNode(DurationComponent(minutes: self.totalDuration, styles: durationStyles), in: self),
+                    ComponentNode(DurationComponent(seconds: self.totalDuration!, styles: durationStyles), in: self),
                 ]),
                 ComponentNode(SeparatorComponent(), in: self),
-                ComponentNode(JourneyRoadmapFriezeComponent(), in: self),
-                ComponentNode(JourneyWalkingAbstractComponent(), in: self),
+                ComponentNode(JourneyRoadmapFriezeComponent(sections: self.sections), in: self),
+                ComponentNode(JourneyWalkingAbstractComponent(duration: self.walkingDuration!, distance: walkingDistance!, key: self.uniqueKey + "/view/view/journeywalkingabstract"), in: self),
             ]),
         ])
     }

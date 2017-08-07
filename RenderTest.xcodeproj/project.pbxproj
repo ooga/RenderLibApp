@@ -49,7 +49,6 @@
 		A1819C131F33722C00728894 /* JourneyWalkingAbstractComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */; };
 		A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */; };
 		A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */; };
-		A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A99D181F2F75FF00A3C767 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,7 +99,6 @@
 		A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneyWalkingAbstractComponent.swift; path = Components/JourneyWalkingAbstractComponent.swift; sourceTree = "<group>"; };
 		A1A17AB71F28D168004B70FD /* JourneySolutionsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionsScreen.swift; path = Screens/JourneySolutionsScreen.swift; sourceTree = "<group>"; };
 		A1A17AB91F28D1FF004B70FD /* ContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerComponent.swift; path = Components/ContainerComponent.swift; sourceTree = "<group>"; };
-		A1A99D181F2F75FF00A3C767 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Util/Styles.swift; sourceTree = "<group>"; };
 		EA90B2DEB60A30D341B4A400 /* Pods-RenderTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTest/Pods-RenderTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */,
-				A1A99D181F2F75FF00A3C767 /* Styles.swift */,
 				A12FE1F31F30A07B00D2BB8F /* Icons.swift */,
 				A1819C0C1F31D1AB00728894 /* Metrics.swift */,
 				A1819C0E1F31D51100728894 /* Color.swift */,
@@ -421,7 +418,6 @@
 				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
 				A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */,
 				A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */,
-				A1A99D191F2F75FF00A3C767 /* Styles.swift in Sources */,
 				A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */,
 				A1819C0D1F31D1AB00728894 /* Metrics.swift in Sources */,
 				A1819C0F1F31D51100728894 /* Color.swift in Sources */,

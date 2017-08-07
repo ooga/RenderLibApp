@@ -14,7 +14,6 @@ class JourneySolutionsController: ViewController, ComponentController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addComponentToViewControllerHierarchy()
-        renderComponent()
     }
     
     override func viewDidLayoutSubviews() {

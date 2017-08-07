@@ -9,29 +9,30 @@
 import Foundation
 
 func timeText(isoString: String) -> String {
-    /*
-    let date: Date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-    let formatter: DateFormatter = DateFormatter()
-    formatter.dateFormat = config.metrics.timeFormat
-    return formatter.string(from: date)
-    */
-    return "<time>"
+    let timeData = isoString.characters.split(separator: "T").map(String.init)
+    let hours = String(Array(timeData[1].characters)[0...1])
+    let minutes = String(Array(timeData[1].characters)[2...3])
+    
+    return hours + ":" + minutes
 }
 
-func durationText(minutes: Int) -> String {
-    if (minutes < 60) {
+func durationText(seconds: Int32) -> String {
+    if (seconds < 60) {
+        return "< 1 min"
+    } else if (seconds < 3600) {
+        let minutes: Int32 = seconds / 60
         return String(minutes) + " min"
     } else {
-        let hours = minutes / 60
-        let remainingMinutes = minutes
-        return String(hours) + " h " + String(remainingMinutes)
+        let hours: Int32 = seconds / 3600
+        let remainingMinutes: Int32 = (seconds / 60) - (hours * 60)
+        return String(hours) + "h" + String(remainingMinutes)
     }
 }
 
-func distanceText(meters: Int) -> String {
+func distanceText(meters: Int32) -> String {
     if (meters < 1000) {
         return String(meters) + "m"
     } else {
-        return String(meters / 1000) + " km"
+        return String(Float(meters) / 1000) + " km"
     }
 }

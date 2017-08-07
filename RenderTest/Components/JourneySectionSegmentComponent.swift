@@ -28,7 +28,7 @@ class JourneySectionSegmentComponent: ViewComponent {
         let containerStyles: [String: Any] = [
             "backgroundColor": self.color,
             "borderRadius": 3,
-            "height": 4,
+            "height": 5,
         ]
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self)

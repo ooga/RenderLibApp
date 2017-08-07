@@ -8,10 +8,14 @@
 
 import Foundation
 import Render
+import NavitiaSDK
 
 class JourneyRoadmapFriezeComponent: ViewComponent {
-    override init(key: String, styles: Dictionary<String, Any> = [:]) {
+    var sections: [Section] = []
+    
+    init(sections: [Section], key: String = "", styles: Dictionary<String, Any> = [:]) {
         super.init(key: key, styles: styles)
+        self.sections = sections
     }
     
     required init() {
@@ -24,14 +28,52 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
+        let sectionComponents = getSectionComponents(sections: self.sections)
         return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
             ComponentNode(SeparatorComponent(), in: self),
-            ComponentNode(ViewComponent(key: "", styles: modeListStyles), in: self).add(children: [
-                ComponentNode(JourneySectionAbstractComponent(mode: "bus", duration: 100, lineCode: "6", color: UIColor.red), in: self),
-                ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 51, lineCode: "A", color: UIColor.blue), in: self),
-                ComponentNode(JourneySectionAbstractComponent(mode: "tramway", duration: 25, lineCode: "C1", color: UIColor.brown), in: self),
-            ])
+            ComponentNode(ViewComponent(key: "", styles: modeListStyles), in: self).add(children: sectionComponents)
         ])
+    }
+    
+    func getSectionComponents(sections: [Section]) -> [NodeType] {
+        var results: [NodeType] = []
+        for section in sections {
+            if section.type! == "public_transport" || section.type! == "street_network" {
+                let modeIcon: String = getModeIcon(section: section)
+                var mainColor: UIColor? = nil
+                var lineCode: String? = nil
+                if section.displayInformations != nil {
+                    mainColor = getUIColorFromHexadecimal(hex: (section.displayInformations?.color)!)
+                    lineCode = section.displayInformations?.code
+                }
+                results.append(ComponentNode(JourneySectionAbstractComponent(modeIcon: modeIcon, duration: section.duration!, lineCode: lineCode, color: mainColor), in: self))
+            }
+        }
+        return results
+    }
+    
+    func getModeIcon(section: Section) -> String {
+        switch section.type! {
+            case "public_transport": return getCommercialMode(links: section.links!)
+            case "transfer": return section.transferType!
+            case "waiting": return section.type!
+            default: return section.mode!
+        }
+    }
+    
+    func getCommercialMode(links: [LinkSchema]) -> String {
+        let id = getCommercialModeId(links: links)
+        var modeData = id.characters.split(separator: ":").map(String.init)
+        return modeData[1]
+    }
+    
+    func getCommercialModeId(links: [LinkSchema]) -> String {
+        for link in links {
+            if link.type == "commercial_mode" {
+                return link.id!
+            }
+        }
+        return "<not_found>"
     }
     
     let containerStyles: [String: Any] = [

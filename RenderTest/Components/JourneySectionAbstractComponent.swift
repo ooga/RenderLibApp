@@ -9,13 +9,13 @@
 import Render
 
 class JourneySectionAbstractComponent: ViewComponent {
-    var mode: String = "<unknown>"
-    var duration: Int = 0
-    var lineCode: String = "<code>"
-    var color: UIColor = UIColor()
+    var modeIcon: String = "<unknown>"
+    var duration: Int32 = 0
+    var lineCode: String? = nil
+    var color: UIColor? = nil
     
-    init(mode: String, duration: Int, lineCode: String = "", color: UIColor = UIColor(), key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.mode = mode
+    init(modeIcon: String, duration: Int32, lineCode: String? = nil, color: UIColor? = UIColor(), key: String = "", styles: Dictionary<String, Any> = [:]) {
+        self.modeIcon = modeIcon
         self.duration = duration
         self.lineCode = lineCode
         self.color = color
@@ -34,16 +34,24 @@ class JourneySectionAbstractComponent: ViewComponent {
     override func render() -> NodeType {
         let containerStyles: [String: Any] = [
             "fontSize": 16,
-            "flexGrow": self.duration,
+            "flexGrow": Int(self.duration),
             "marginEnd": config.metrics.margin,
         ]
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
+        
+        var symbolComponents: [NodeType] = [
+            ComponentNode(ModeComponent(name: self.modeIcon, key: self.uniqueKey + "/view/view/mode", styles: modeStyles), in: self)
+        ]
+        var segmentColor: UIColor = config.colors.darkerGray
+        
+        if self.lineCode != nil {
+            symbolComponents.append(ComponentNode(LineCodeComponent(code: self.lineCode!, color: self.color!, key: self.uniqueKey + "/view/view/linecode"), in: self))
+            segmentColor = self.color!
+        }
+        
         return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
-            ComponentNode(ViewComponent(key: self.uniqueKey + "/view/view", styles: viewStyles), in: self).add(children: [
-                ComponentNode(ModeComponent(name: self.mode, key: self.uniqueKey + "/view/view/mode", styles: modeStyles), in: self),
-                ComponentNode(LineCodeComponent(code: self.lineCode, color: self.color, key: self.uniqueKey + "/view/view/linecode"), in: self),
-            ]),
-            ComponentNode(JourneySectionSegmentComponent(color: self.color, key: self.uniqueKey + "/view/journeysectionsegment"), in: self),
+            ComponentNode(ViewComponent(key: self.uniqueKey + "/view/view", styles: viewStyles), in: self).add(children: symbolComponents),
+            ComponentNode(JourneySectionSegmentComponent(color: segmentColor, key: self.uniqueKey + "/view/journeysectionsegment"), in: self),
         ])
     }
     let viewStyles: [String: Any] = [
@@ -52,5 +60,6 @@ class JourneySectionAbstractComponent: ViewComponent {
     ]
     let modeStyles = [
         "marginRight": config.metrics.marginS,
+        "height": 28,
     ]
 }

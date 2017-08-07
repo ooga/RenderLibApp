@@ -10,8 +10,13 @@ import Foundation
 import Render
 
 class PlaceComponent: ViewComponent {
-    required override init(key: String, styles: Dictionary<String, Any> = [:]) {
+    var placeName: String? = nil
+    var cityName: String? = nil
+    
+    required init(placeName: String?, cityName: String? = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         super.init(key: key, styles: styles)
+        self.placeName = placeName
+        self.cityName = cityName
     }
     
     required init() {
@@ -25,8 +30,8 @@ class PlaceComponent: ViewComponent {
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: "20 rue Hector Malot,", styles: nameStyles), in: self),
-            ComponentNode(TextComponent(text: "75012 Paris"), in: self),
+            ComponentNode(TextComponent(text: self.placeName! + ",", styles: nameStyles), in: self),
+            ComponentNode(TextComponent(text: self.cityName!), in: self),
         ])
     }
     

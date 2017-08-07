@@ -11,13 +11,15 @@ import Render
 class AutocompleteInputComponent: ButtonComponent {
     var icon: String = ""
     var iconColor: UIColor? = nil
-    var title: String = ""
+    var placeName: String = ""
+    var cityName: String = ""
     var placeholder: String = ""
     
-    init(icon: String = "", iconColor: UIColor = UIColor(), title: String = "", placeholder: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
+    init(icon: String = "", iconColor: UIColor = UIColor(), placeName: String = "", cityName: String = "", placeholder: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
         self.icon = icon
         self.iconColor = iconColor
-        self.title = title
+        self.placeName = placeName
+        self.cityName = cityName
         self.placeholder = placeholder
         
         super.init(key: key, styles: styles)
@@ -40,7 +42,7 @@ class AutocompleteInputComponent: ButtonComponent {
                 ComponentNode(ViewComponent(key: "", styles: containerStyles), in: self).add(children: [
                     ComponentNode(IconComponent(name: self.icon, key: "", styles: iconComputedStyles), in: self),
                     ComponentNode(ViewComponent(), in: self).add(children: [
-                        ComponentNode(PlaceComponent(), in: self)
+                        ComponentNode(PlaceComponent(placeName: self.placeName, cityName: self.cityName), in: self)
                     ])
                 ])
             ])
