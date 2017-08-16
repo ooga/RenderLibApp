@@ -10,13 +10,13 @@ import Foundation
 import Render
 
 class PlaceComponent: ViewComponent {
-    var placeName: String? = nil
-    var cityName: String? = nil
+    var name: String = ""
     
-    required init(placeName: String?, cityName: String? = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
+    required init(name: String?, key: String = "", styles: Dictionary<String, Any> = [:]) {
         super.init(key: key, styles: styles)
-        self.placeName = placeName
-        self.cityName = cityName
+        if name != nil {
+            self.name = name!
+        }
     }
     
     required init() {
@@ -28,16 +28,9 @@ class PlaceComponent: ViewComponent {
     }
     
     override func render() -> NodeType {
-        let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: self.placeName! + ",", styles: nameStyles), in: self),
-            ComponentNode(TextComponent(text: self.cityName!), in: self),
-        ])
-    }
+        let computedStyles = mergeDictionaries(dict1: nameStyles, dict2: self.styles)
+        return ComponentNode(TextComponent(text: self.name, styles: computedStyles), in: self)    }
     
-    let containerStyles: [String: Any] = [
-        "flexDirection": YGFlexDirection.row
-    ]
     let nameStyles: [String: Any] = [
         "fontWeight": "bold",
         "marginEnd": config.metrics.marginS

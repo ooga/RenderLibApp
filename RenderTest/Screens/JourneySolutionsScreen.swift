@@ -48,7 +48,10 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
         return ComponentNode(ScreenComponent(key: self.uniqueKey + "/screen"), in: self).add(children: [
             ComponentNode(ViewComponent(key: self.uniqueKey + "/screen/view"), in: self).add(children: [
                 ComponentNode(ContainerComponent(key: self.uniqueKey + "/screen/view/container", styles: containerStyles), in: self).add(children: [
-                    ComponentNode(JourneyFormComponent(origin: state.origin, destination: state.destination, key: self.uniqueKey + "/screen/view/container/journeyform"), in: self),
+                    ComponentNode(JourneyFormComponent(), in: self, props: {(component, hasKey: Bool) in
+                        component.origin = self.state.origin.isEmpty ? self.state.originId : self.state.origin
+                        component.destination = self.state.destination.isEmpty ? self.state.destinationId : self.state.destination
+                    }),
                     ComponentNode(DateTimeButtonComponent(key: self.uniqueKey + "/screen/view/container/datetimebutton"), in: self)
                 ]),
  
@@ -65,7 +68,6 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
         navitiaSDK?.journeysApi.newJourneysRequestBuilder()
             .withFrom(originId)
             .withTo(destinationId)
-            .withMinNbJourneys(6)
             .get(completion: { journeys, error in
                 if error != nil {
                     NSLog(error.debugDescription)
@@ -75,10 +77,12 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
                     self.setState { state in
                         state.journeys = journeys
                     }
+                    
                     if (journeys?.journeys?.isEmpty == false) {
                         self.extractLabelsFromJourneyResult(journey: (journeys?.journeys![0])!)
                     }
                 }
+                
                 self.setState { state in
                     state.loading = false
                 }

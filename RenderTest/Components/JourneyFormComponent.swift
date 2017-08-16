@@ -14,20 +14,6 @@ class JourneyFormComponent: ViewComponent {
     var origin: String = ""
     var destination: String = ""
     
-    required init(origin: String, destination: String, key: String = "", styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-        self.origin = origin
-        self.destination = destination
-    }
-    
-    required init() {
-        super.init(key: "<empty!>", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = self.styles
         return ComponentNode(FormComponent(key: "", styles: computedStyles), in: self).add(children: [
