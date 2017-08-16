@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DF9FF6F695D6C0A14DB6CBC0217C93608A8677E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E5BBF0AA85077C865C95437976D06D819733A208" : 9223372036854775807,
+    "DF9FF6F695D6C0A14DB6CBC0217C93608A8677E4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A22EBBD4-12A3-4EA1-B928-AEB3CACEC34C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E5BBF0AA85077C865C95437976D06D819733A208" : "..\/..\/codegen\/swagger-codegen",
+    "DF9FF6F695D6C0A14DB6CBC0217C93608A8677E4" : "RenderLibApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RenderTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RenderTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:is06\/RenderLibApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DF9FF6F695D6C0A14DB6CBC0217C93608A8677E4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:CanalTP\/navitiasdk-codegen.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E5BBF0AA85077C865C95437976D06D819733A208"
+    }
+  ]
+}

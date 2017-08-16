@@ -29,3 +29,7 @@ class ViewController: UIViewController {
         vc.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
+
+enum ControllerError : Error {
+    case MissingArgument(String)
+}

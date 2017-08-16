@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04273BFC1F3B622A00459161 /* NavitiaSDKPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */; };
+		04EDABCD1F3DB1EA005A107D /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDABCC1F3DB1EA005A107D /* YelpController.swift */; };
 		81E4DB8B441D859CB837099F /* Pods_RenderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AD243D003A93CB77465AD /* Pods_RenderTest.framework */; };
 		A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */; };
 		A103CE441F28D89E00715FAB /* DateTimeButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE431F28D89E00715FAB /* DateTimeButtonComponent.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavitiaSDKPromise.swift; path = Promise/NavitiaSDKPromise.swift; sourceTree = "<group>"; };
+		04EDABCC1F3DB1EA005A107D /* YelpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
 		424AD243D003A93CB77465AD /* Pods_RenderTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RenderTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB69EB843897A145EE2B03D /* Pods_RenderTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RenderTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4B9C5B87B1D5426D71D8EA /* Pods-RenderTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RenderTest/Pods-RenderTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04273BFA1F3B619300459161 /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */,
+			);
+			name = Promise;
+			sourceTree = "<group>";
+		};
 		1DCFF2001B87A4E27292CCA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 		A16F65511F28924B0009A233 /* RenderTest */ = {
 			isa = PBXGroup;
 			children = (
+				04273BFA1F3B619300459161 /* Promise */,
 				A183C2D31F289EC000BD0715 /* Controllers */,
 				A183C2D41F289EE800BD0715 /* Screens */,
 				A183C2D21F289EB000BD0715 /* Components */,
@@ -244,6 +257,7 @@
 			children = (
 				A17F50D31F28BF7E00AF8F1C /* JourneySolutionsController.swift */,
 				A17F50D41F28BF7E00AF8F1C /* ViewController.swift */,
+				04EDABCC1F3DB1EA005A107D /* YelpController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -385,7 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -396,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */,
+				04273BFC1F3B622A00459161 /* NavitiaSDKPromise.swift in Sources */,
 				A120D6531F34C9E400A6C34C /* EmptyStateType.swift in Sources */,
 				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
@@ -417,6 +432,7 @@
 				A1139F351F29E47900FD467A /* ViewComponent.swift in Sources */,
 				A103CE581F28F30B00715FAB /* JourneyRoadmapFriezeComponent.swift in Sources */,
 				A1139F301F29E1FD00FD467A /* ModeComponent.swift in Sources */,
+				04EDABCD1F3DB1EA005A107D /* YelpController.swift in Sources */,
 				A1A17ABA1F28D1FF004B70FD /* ContainerComponent.swift in Sources */,
 				A103CE541F28EFE300715FAB /* JourneySolutionComponent.swift in Sources */,
 				A1819C0D1F31D1AB00728894 /* Metrics.swift in Sources */,

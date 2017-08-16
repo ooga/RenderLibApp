@@ -52,6 +52,16 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
         return results
     }
     
+    static func getSegment() -> NodeType {
+        return Node<UIView>() { (view, layout, size) in
+            view.backgroundColor = config.colors.origin
+            layout.width = CGFloat(config.metrics.margin)
+            layout.height = CGFloat(0.5)
+            layout.alignSelf = .flexEnd
+            layout.marginBottom = CGFloat(2)
+        }
+    }
+    
     func getModeIcon(section: Section) -> String {
         switch section.type! {
             case "public_transport": return getCommercialMode(links: section.links!)

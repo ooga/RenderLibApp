@@ -7,8 +7,14 @@
 //
 import Render
 import UIKit
+import NavitiaSDK
 
 class JourneySolutionsController: ViewController, ComponentController {
+    var originId: String?
+    var origin: String?
+    var destinationId: String?
+    var destination: String?
+    
     var component = JourneySolutionsScreen()
     
     override func viewDidLoad() {
@@ -20,8 +26,22 @@ class JourneySolutionsController: ViewController, ComponentController {
         renderComponent()
     }
     
-    func configureComponentProps() {
-        // No props to configure
+    func configureComponentProps() {}
+    
+    func setProps(originId: String, destinationId: String, origin: String? = nil, destination: String? = nil) {
+        component.state.originId = originId
+        component.state.destinationId = destinationId
+        
+        if (origin != nil) {
+            component.state.origin = origin!
+        }
+        if (destination != nil) {
+            component.state.destination = destination!
+        }
+    }
+    
+    func setProps(origin: Place, destination: Place) {
+        self.setProps(originId: origin.id!, destinationId: destination.id!, origin: origin.name, destination: destination.name)
     }
 }
 

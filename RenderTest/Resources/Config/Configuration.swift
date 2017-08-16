@@ -11,7 +11,7 @@ import UIKit
 struct Configuration {
     struct MetricConfiguration {
         let space = 4
-        let radius = 5
+        let radius = 0
         let marginS = 4
         let margin = 8
         let marginL = 16
@@ -21,9 +21,12 @@ struct Configuration {
     }
     
     struct ColorConfiguration {
+        // #37ab2e
+        // let primary = UIColor(red:0.21, green:0.67, blue:0.18, alpha:1.0)
         let primary = UIColor(red:0.40, green:0.40, blue:0.40, alpha:1.0)
         let secondary = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
-        let tertiary = UIColor(red:0.00, green:0.62, blue:0.88, alpha:1.0)
+        // let tertiary = UIColor(red:0.00, green:0.62, blue:0.88, alpha:1.0)
+        let tertiary = UIColor(red:0.21, green:0.67, blue:0.18, alpha:1.0)
         let white = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         let lighterGray = UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
         let lightGray = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)

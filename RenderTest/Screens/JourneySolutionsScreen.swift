@@ -9,25 +9,26 @@
 import Foundation
 import Render
 import NavitiaSDK
+import then
+import Alamofire
 
 struct JourneySolutionsScreenState: StateType {
-    var origin: Place? = nil
-    var destination: Place? = nil
+    var origin: String = ""
+    var originId: String = ""
+    var destination: String = ""
+    var destinationId: String = ""
     var journeys: Journeys? = nil
+    var loading: Bool = false
 }
 
 class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenState> {
-    var navitiaConfig: NavitiaConfiguration? = nil
     var navitiaSDK: NavitiaSDK? = nil
     
     required init() {
         super.init(key: "JourneySolutionScreen", styles: [:])
         
-        self.navitiaConfig = NavitiaConfiguration(token: "0de19ce5-e0eb-4524-a074-bda3c6894c19")
-        self.navitiaSDK = NavitiaSDK(configuration: self.navitiaConfig!)
-        
-        self.setOrigin(q: "Bastille Paris")
-        self.setDestination(q: "Villiers")
+        let navitiaConfig = NavitiaConfiguration(token: "0de19ce5-e0eb-4524-a074-bda3c6894c19")
+        self.navitiaSDK = NavitiaSDK(configuration: navitiaConfig)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,12 +36,8 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
     }
     
     override func render() -> NodeType {
-        var journeyFormComponent: NodeType = ComponentNode(ViewComponent(), in: self)
-        if state.origin != nil && state.destination != nil {
-            journeyFormComponent = ComponentNode(JourneyFormComponent(origin: state.origin, destination: state.destination, key: self.uniqueKey + "/screen/view/container/journeyform"), in: self)
-            NSLog((state.origin?.id)!)
-            NSLog((state.destination?.id)!)
-            self.retrieveJourneys(originId: (state.origin?.id)!, destinationId: (state.destination?.id)!)
+        if !state.originId.isEmpty && !state.destinationId.isEmpty && !state.loading && state.journeys == nil {
+            self.retrieveJourneys(originId: self.state.originId, destinationId: self.state.destinationId)
         }
         
         var journeyComponents: [NodeType] = []
@@ -51,42 +48,24 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
         return ComponentNode(ScreenComponent(key: self.uniqueKey + "/screen"), in: self).add(children: [
             ComponentNode(ViewComponent(key: self.uniqueKey + "/screen/view"), in: self).add(children: [
                 ComponentNode(ContainerComponent(key: self.uniqueKey + "/screen/view/container", styles: containerStyles), in: self).add(children: [
-                    journeyFormComponent,
+                    ComponentNode(JourneyFormComponent(origin: state.origin, destination: state.destination, key: self.uniqueKey + "/screen/view/container/journeyform"), in: self),
                     ComponentNode(DateTimeButtonComponent(key: self.uniqueKey + "/screen/view/container/datetimebutton"), in: self)
                 ]),
+ 
                 ComponentNode(ListViewComponent(key: self.uniqueKey + "/screen/view/list", styles: listStyles), in: self).add(children: journeyComponents)
             ])
         ])
     }
     
-    func setOrigin(q: String) {
-        self.navitiaSDK?.placesApi.newPlacesRequestBuilder().withQ(q).withType(["address"]).get(completion: { places, error in
-            if error != nil {
-                NSLog(error.debugDescription)
-            } else {
-                self.setState { state in
-                    state.origin = places?.places?[0]
-                }
-            }
-        })
-    }
-    
-    func setDestination(q: String) {
-        self.navitiaSDK?.placesApi.newPlacesRequestBuilder().withQ(q).withType(["address"]).get(completion: { places, error in
-            if error != nil {
-                NSLog(error.debugDescription)
-            } else {
-                self.setState { state in
-                    state.destination = places?.places?[0]
-                }
-            }
-        })
-    }
-    
     func retrieveJourneys(originId: String, destinationId: String) {
+        self.setState{ state in
+            state.loading = true
+        }
+        
         navitiaSDK?.journeysApi.newJourneysRequestBuilder()
             .withFrom(originId)
             .withTo(destinationId)
+            .withMinNbJourneys(6)
             .get(completion: { journeys, error in
                 if error != nil {
                     NSLog(error.debugDescription)
@@ -96,6 +75,12 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
                     self.setState { state in
                         state.journeys = journeys
                     }
+                    if (journeys?.journeys?.isEmpty == false) {
+                        self.extractLabelsFromJourneyResult(journey: (journeys?.journeys![0])!)
+                    }
+                }
+                self.setState { state in
+                    state.loading = false
                 }
             })
     }
@@ -108,6 +93,25 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
             index += 1
         }
         return results
+    }
+    
+    func extractLabelsFromJourneyResult(journey: Journey) {
+        var origin = state.origin
+        var destination = state.destination
+        
+        if (journey.sections?.isEmpty == false) {
+            if state.origin.isEmpty {
+                origin = (journey.sections![0].from?.name)!
+            }
+            if state.destination.isEmpty {
+                destination = (journey.sections![journey.sections!.count - 1].from?.name)!
+            }
+        }
+        
+        self.setState { state in
+            state.origin = origin
+            state.destination = destination
+        }
     }
     
     let containerStyles = [

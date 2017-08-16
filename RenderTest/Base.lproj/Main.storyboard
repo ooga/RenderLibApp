@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wkr-yt-tvF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wkr-yt-tvF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Results-->
         <scene sceneID="i0W-hu-eg5">
             <objects>
-                <viewController storyboardIdentifier="JourneySolutions" title="Results" id="Wkr-yt-tvF" customClass="JourneySolutionsController" customModule="RenderTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JourneySolutions" title="Results" id="Wkr-yt-tvF" customClass="YelpController" customModule="RenderTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5sY-J6-3Ka"/>
                         <viewControllerLayoutGuide type="bottom" id="JcD-GO-1Iz"/>
@@ -20,12 +20,40 @@
                     <view key="view" contentMode="scaleToFill" id="XFU-7z-BAo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyO-eg-VDX">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Niu-ek-JyJ" kind="show" id="7PE-Dt-ehR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKd-pz-YDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1103" y="75"/>
+        </scene>
+        <!--Journey Solutions Controller-->
+        <scene sceneID="WYm-oA-GZn">
+            <objects>
+                <viewController id="Niu-ek-JyJ" customClass="JourneySolutionsController" customModule="RenderTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4PX-yQ-7xy"/>
+                        <viewControllerLayoutGuide type="bottom" id="MeE-kF-dBU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oBB-zp-buH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LF4-Ho-RLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="74"/>
         </scene>
     </scenes>
 </document>

@@ -11,10 +11,10 @@ import Render
 import NavitiaSDK
 
 class JourneyFormComponent: ViewComponent {
-    var origin: Place? = nil
-    var destination: Place? = nil
+    var origin: String = ""
+    var destination: String = ""
     
-    required init(origin: Place?, destination: Place?, key: String = "", styles: Dictionary<String, Any> = [:]) {
+    required init(origin: String, destination: String, key: String = "", styles: Dictionary<String, Any> = [:]) {
         super.init(key: key, styles: styles)
         self.origin = origin
         self.destination = destination
@@ -31,9 +31,9 @@ class JourneyFormComponent: ViewComponent {
     override func render() -> NodeType {
         let computedStyles = self.styles
         return ComponentNode(FormComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(AutocompleteInputComponent(icon: "origin", iconColor: config.colors.origin, placeName: (origin?.name)!, cityName: "", placeholder: "Saisissez votre point de départ"), in: self),
+            ComponentNode(AutocompleteInputComponent(icon: "origin", iconColor: config.colors.origin, placeName: origin, placeholder: "Saisissez votre point de départ"), in: self),
             ComponentNode(SeparatorComponent(), in: self),
-            ComponentNode(AutocompleteInputComponent(icon: "destination", iconColor: config.colors.destination, placeName: (destination?.name)!, cityName: "", placeholder: "Saisissez votre point d'arrivée"), in: self)
+            ComponentNode(AutocompleteInputComponent(icon: "destination", iconColor: config.colors.destination, placeName: destination, placeholder: "Saisissez votre point d'arrivée"), in: self)
         ])
     }
 }
