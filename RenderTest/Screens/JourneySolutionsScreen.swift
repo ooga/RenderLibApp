@@ -9,8 +9,6 @@
 import Foundation
 import Render
 import NavitiaSDK
-import then
-import Alamofire
 
 struct JourneySolutionsScreenState: StateType {
     var origin: String = ""

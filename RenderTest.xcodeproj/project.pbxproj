@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04273BFC1F3B622A00459161 /* NavitiaSDKPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */; };
 		048E62B11F4587790049E7FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048E62AF1F4587790049E7FB /* Localizable.strings */; };
 		04EDABCD1F3DB1EA005A107D /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDABCC1F3DB1EA005A107D /* YelpController.swift */; };
 		81E4DB8B441D859CB837099F /* Pods_RenderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AD243D003A93CB77465AD /* Pods_RenderTest.framework */; };
@@ -55,7 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavitiaSDKPromise.swift; path = Promise/NavitiaSDKPromise.swift; sourceTree = "<group>"; };
 		048E62AD1F4587340049E7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		048E62AE1F4587340049E7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048E62B01F4587790049E7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = RenderTest/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -121,14 +119,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04273BFA1F3B619300459161 /* Promise */ = {
-			isa = PBXGroup;
-			children = (
-				04273BFB1F3B622A00459161 /* NavitiaSDKPromise.swift */,
-			);
-			name = Promise;
-			sourceTree = "<group>";
-		};
 		1DCFF2001B87A4E27292CCA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +199,6 @@
 		A16F65511F28924B0009A233 /* RenderTest */ = {
 			isa = PBXGroup;
 			children = (
-				04273BFA1F3B619300459161 /* Promise */,
 				A183C2D31F289EC000BD0715 /* Controllers */,
 				A183C2D41F289EE800BD0715 /* Screens */,
 				A183C2D21F289EB000BD0715 /* Components */,
@@ -415,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */,
-				04273BFC1F3B622A00459161 /* NavitiaSDKPromise.swift in Sources */,
 				A120D6531F34C9E400A6C34C /* EmptyStateType.swift in Sources */,
 				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,

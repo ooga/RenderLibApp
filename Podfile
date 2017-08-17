@@ -7,6 +7,5 @@ target 'RenderTest' do
 
   # Pods for RenderTest
   pod 'Render', '4.9'
-  pod 'thenPromise', '~> 2.2.3'
   pod 'NavitiaSDK', :path => '/Users/johan/code/sdk/codegen/swagger-codegen/samples/client/navitia/tmp/NavitiaSDK_ios'
 end
