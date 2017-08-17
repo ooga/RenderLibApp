@@ -9,7 +9,7 @@
 import Foundation
 import Render
 
-class ViewComponentStateful<S: StateType>: StylizedComponent<S> {
+class ViewComponent: StylizedComponent<NilState> {
     override func render() -> NodeType {
         return Node<UIView>() { view, layout, size in
             self.applyStyles(view: view, layout: layout)

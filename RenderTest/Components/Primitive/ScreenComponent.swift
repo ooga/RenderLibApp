@@ -9,7 +9,7 @@
 import Foundation
 import Render
 
-class ScreenComponentStateful<S: StateType>: StylizedComponent<S> {
+class ScreenComponent: StylizedComponent<NilState> {
     override func render() -> NodeType {
         return Node<UIScrollView>() { view, layout, size in
             layout.width = size.width

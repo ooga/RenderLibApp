@@ -19,12 +19,12 @@ struct JourneySolutionsScreenState: StateType {
     var loading: Bool = false
 }
 
-class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenState> {
+class JourneySolutionsScreen: ComponentView<JourneySolutionsScreenState> {
     var navitiaSDK: NavitiaSDK? = nil
     
     required init() {
         super.init()
-        
+                
         let navitiaConfig = NavitiaConfiguration(token: "0de19ce5-e0eb-4524-a074-bda3c6894c19")
         self.navitiaSDK = NavitiaSDK(configuration: navitiaConfig)
     }

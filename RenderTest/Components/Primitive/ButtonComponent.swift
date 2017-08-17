@@ -9,7 +9,7 @@
 import Foundation
 import Render
 
-class ButtonComponentStateful<S: StateType>: StylizedComponent<S> {
+class ButtonComponent: StylizedComponent<NilState> {
     var text: String = ""
     
     override func render() -> NodeType {

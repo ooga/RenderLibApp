@@ -29,7 +29,6 @@
 		A1139F371F29E4A800FD467A /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F361F29E4A800FD467A /* ButtonComponent.swift */; };
 		A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F381F29E51900FD467A /* LabelComponent.swift */; };
 		A1139F441F2A241800FD467A /* StylizedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1139F431F2A241800FD467A /* StylizedComponent.swift */; };
-		A120D6531F34C9E400A6C34C /* EmptyStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A120D6521F34C9E400A6C34C /* EmptyStateType.swift */; };
 		A12FE1EB1F3059B600D2BB8F /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */; };
 		A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1EC1F306B7700D2BB8F /* PlaceComponent.swift */; };
 		A12FE1F41F30A07B00D2BB8F /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE1F31F30A07B00D2BB8F /* Icons.swift */; };
@@ -82,7 +81,6 @@
 		A1139F361F29E4A800FD467A /* ButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonComponent.swift; path = Components/Primitive/ButtonComponent.swift; sourceTree = "<group>"; };
 		A1139F381F29E51900FD467A /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = Components/Primitive/LabelComponent.swift; sourceTree = "<group>"; };
 		A1139F431F2A241800FD467A /* StylizedComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StylizedComponent.swift; path = Components/Primitive/StylizedComponent.swift; sourceTree = "<group>"; };
-		A120D6521F34C9E400A6C34C /* EmptyStateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyStateType.swift; path = Components/Primitive/EmptyStateType.swift; sourceTree = "<group>"; };
 		A12FE1EA1F3059B600D2BB8F /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = Util/Dictionary.swift; sourceTree = "<group>"; };
 		A12FE1EC1F306B7700D2BB8F /* PlaceComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceComponent.swift; path = Components/PlaceComponent.swift; sourceTree = "<group>"; };
 		A12FE1F31F30A07B00D2BB8F /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Icons.swift; path = Util/Icons.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				A15734C91F2B334300C860FC /* ScreenComponent.swift */,
 				A1139F431F2A241800FD467A /* StylizedComponent.swift */,
 				A1139F341F29E47900FD467A /* ViewComponent.swift */,
-				A120D6521F34C9E400A6C34C /* EmptyStateType.swift */,
 			);
 			name = Primitive;
 			sourceTree = "<group>";
@@ -404,7 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17F50D81F28BFD600AF8F1C /* BoxComponent.swift in Sources */,
-				A120D6531F34C9E400A6C34C /* EmptyStateType.swift in Sources */,
 				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
 				A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */,

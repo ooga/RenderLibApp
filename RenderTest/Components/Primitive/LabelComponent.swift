@@ -9,7 +9,7 @@
 import Foundation
 import Render
 
-class LabelComponentStateful<S: StateType>: StylizedComponent<S> {
+class LabelComponent: StylizedComponent<NilState> {
     var text: String = ""
     var sharedFont: UIFont = UIFont.systemFont(ofSize: 14)
     
