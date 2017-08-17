@@ -25,7 +25,7 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
     var navitiaSDK: NavitiaSDK? = nil
     
     required init() {
-        super.init(key: "JourneySolutionScreen", styles: [:])
+        super.init()
         
         let navitiaConfig = NavitiaConfiguration(token: "0de19ce5-e0eb-4524-a074-bda3c6894c19")
         self.navitiaSDK = NavitiaSDK(configuration: navitiaConfig)
@@ -45,17 +45,21 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
             journeyComponents = self.getJourneyComponents(journeys: state.journeys!)
         }
         
-        return ComponentNode(ScreenComponent(key: self.uniqueKey + "/screen"), in: self).add(children: [
-            ComponentNode(ViewComponent(key: self.uniqueKey + "/screen/view"), in: self).add(children: [
-                ComponentNode(ContainerComponent(key: self.uniqueKey + "/screen/view/container", styles: containerStyles), in: self).add(children: [
+        return ComponentNode(ScreenComponent(), in: self).add(children: [
+            ComponentNode(ViewComponent(), in: self).add(children: [
+                ComponentNode(ContainerComponent(), in: self, props: {(component, hasKey: Bool) in
+                    component.styles = self.containerStyles
+                }).add(children: [
                     ComponentNode(JourneyFormComponent(), in: self, props: {(component, hasKey: Bool) in
                         component.origin = self.state.origin.isEmpty ? self.state.originId : self.state.origin
                         component.destination = self.state.destination.isEmpty ? self.state.destinationId : self.state.destination
                     }),
-                    ComponentNode(DateTimeButtonComponent(key: self.uniqueKey + "/screen/view/container/datetimebutton"), in: self)
+                    ComponentNode(DateTimeButtonComponent(), in: self)
                 ]),
  
-                ComponentNode(ListViewComponent(key: self.uniqueKey + "/screen/view/list", styles: listStyles), in: self).add(children: journeyComponents)
+                ComponentNode(ListViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                    component.styles = self.listStyles
+                }).add(children: journeyComponents)
             ])
         ])
     }
@@ -93,7 +97,9 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
         var results: [NodeType] = []
         var index: Int32 = 0
         for journey in journeys.journeys! {
-            results.append(ComponentNode(JourneySolutionComponent(journey: journey, key: self.uniqueKey + "/screen/view/list/journeysolution" + String(index)), in: self))
+            results.append(ComponentNode(JourneySolutionComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.journey = journey
+            }))
             index += 1
         }
         return results

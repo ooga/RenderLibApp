@@ -13,19 +13,6 @@ class LabelComponentStateful<S: StateType>: StylizedComponent<S> {
     var text: String = ""
     var sharedFont: UIFont = UIFont.systemFont(ofSize: 14)
     
-    init(text: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.text = text
-        super.init(key: key, styles: styles)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-    
     override func render() -> NodeType {
         return Node<UILabel>() { view, layout, _ in
             view.text = self.text

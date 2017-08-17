@@ -13,21 +13,6 @@ class StylizedComponent<S: StateType>: ComponentView<S> {
     var styles: Dictionary<String, Any> = [:]
     var uniqueKey: String = "<empty!>"
     
-    init(key: String, styles: Dictionary<String, Any> = [:]) {
-        super.init()
-        self.uniqueKey = key
-        self.styles = styles
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    required init() {
-        super.init()
-        self.styles = [:]
-    }
-    
     func applyStyles(view: UIView, layout: YGLayout) {
         for (prop, value) in styles {
             switch prop {

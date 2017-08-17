@@ -14,23 +14,6 @@ class JourneySectionAbstractComponent: ViewComponent {
     var lineCode: String? = nil
     var color: UIColor? = nil
     
-    init(modeIcon: String, duration: Int32, lineCode: String? = nil, color: UIColor? = UIColor(), key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.modeIcon = modeIcon
-        self.duration = duration
-        self.lineCode = lineCode
-        self.color = color
-        
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("JourneySectionAstractComponent::init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let containerStyles: [String: Any] = [
             "fontSize": 16,
@@ -40,18 +23,30 @@ class JourneySectionAbstractComponent: ViewComponent {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         
         var symbolComponents: [NodeType] = [
-            ComponentNode(ModeComponent(name: self.modeIcon, key: self.uniqueKey + "/view/view/mode", styles: modeStyles), in: self)
+            ComponentNode(ModeComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.name = self.modeIcon
+                component.styles = self.modeStyles
+            })
         ]
         var segmentColor: UIColor = config.colors.darkerGray
         
         if self.lineCode != nil {
-            symbolComponents.append(ComponentNode(LineCodeComponent(code: self.lineCode!, color: self.color!, key: self.uniqueKey + "/view/view/linecode"), in: self))
+            symbolComponents.append(ComponentNode(LineCodeComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.code = self.lineCode!
+                component.color = self.color!
+            }))
             segmentColor = self.color!
         }
         
-        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
-            ComponentNode(ViewComponent(key: self.uniqueKey + "/view/view", styles: viewStyles), in: self).add(children: symbolComponents),
-            ComponentNode(JourneySectionSegmentComponent(color: segmentColor, key: self.uniqueKey + "/view/journeysectionsegment"), in: self),
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.styles = self.viewStyles
+            }).add(children: symbolComponents),
+            ComponentNode(JourneySectionSegmentComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.color = segmentColor
+            }),
         ])
     }
     let viewStyles: [String: Any] = [

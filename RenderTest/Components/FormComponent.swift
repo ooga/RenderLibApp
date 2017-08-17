@@ -10,21 +10,11 @@ import Foundation
 import Render
 
 class FormComponent: ViewComponent {
-    required override init(key: String, styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        super.init(key: "<empty!>", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("FormComponent::init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: formStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self)
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        })
     }
     
     let formStyles: [String: Any] = [

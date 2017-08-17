@@ -16,10 +16,21 @@ class JourneyFormComponent: ViewComponent {
     
     override func render() -> NodeType {
         let computedStyles = self.styles
-        return ComponentNode(FormComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(AutocompleteInputComponent(icon: "origin", iconColor: config.colors.origin, placeName: origin, placeholder: "Saisissez votre point de départ"), in: self),
+        return ComponentNode(FormComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(AutocompleteInputComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.icon = "origin"
+                component.iconColor = config.colors.origin
+                component.placeName = self.origin
+                
+            }),
             ComponentNode(SeparatorComponent(), in: self),
-            ComponentNode(AutocompleteInputComponent(icon: "destination", iconColor: config.colors.destination, placeName: destination, placeholder: "Saisissez votre point d'arrivée"), in: self)
+            ComponentNode(AutocompleteInputComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.icon = "destination"
+                component.iconColor = config.colors.destination
+                component.placeName = self.destination
+            })
         ])
     }
 }

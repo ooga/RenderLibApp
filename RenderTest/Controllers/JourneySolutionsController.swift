@@ -19,6 +19,7 @@ class JourneySolutionsController: ViewController, ComponentController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("controller.JourneySolutionsController.title", comment: "Navigation bar title for journey solutions screen")
         addComponentToViewControllerHierarchy()
     }
     

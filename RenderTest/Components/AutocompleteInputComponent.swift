@@ -12,35 +12,28 @@ class AutocompleteInputComponent: ButtonComponent {
     var icon: String = ""
     var iconColor: UIColor? = nil
     var placeName: String = ""
-    var placeholder: String = ""
-    
-    init(icon: String = "", iconColor: UIColor = UIColor(), placeName: String = "", placeholder: String = "", key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.icon = icon
-        self.iconColor = iconColor
-        self.placeName = placeName
-        self.placeholder = placeholder
-        
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func render() -> NodeType {
         let iconColorStyles:[String: Any] = ["color": self.iconColor as Any]
         let iconComputedStyles = mergeDictionaries(dict1: iconColorStyles, dict2: iconStyles)
         let computedStyles = self.styles
-        return ComponentNode(ButtonComponent(key: self.uniqueKey + "/button", styles: computedStyles), in: self).add(children: [
-            ComponentNode(ViewComponent(key: "", styles: rowStyles), in: self).add(children: [
-                ComponentNode(ViewComponent(key: "", styles: containerStyles), in: self).add(children: [
-                    ComponentNode(IconComponent(name: self.icon, key: "", styles: iconComputedStyles), in: self),
+        return ComponentNode(ButtonComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.styles = self.rowStyles
+            }).add(children: [
+                ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                    component.styles = self.containerStyles
+                }).add(children: [
+                    ComponentNode(IconComponent(), in: self, props: {(component, hasKey: Bool) in
+                        component.name = self.icon
+                        component.styles = iconComputedStyles
+                    }),
                     ComponentNode(ViewComponent(), in: self).add(children: [
-                        ComponentNode(PlaceComponent(name: self.placeName), in: self)
+                        ComponentNode(PlaceComponent(), in: self, props: {(component, hasKey: Bool) in
+                            component.name = self.placeName
+                        })
                     ])
                 ])
             ])

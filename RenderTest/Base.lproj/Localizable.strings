@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  RenderTest
+
+  Created by Johan Rouve on 17/08/2017.
+  Copyright © 2017 Kisio. All rights reserved.
+*/
+
+"controller.JourneySolutionsController.title" = "Solutions list";
+
+"component.JourneyWalkingAbstractComponent.Whose" = "Whose";

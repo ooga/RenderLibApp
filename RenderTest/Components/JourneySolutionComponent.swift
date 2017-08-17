@@ -13,25 +13,21 @@ import NavitiaSDK
 class JourneySolutionComponent: ViewComponent {
     var journey: Journey = Journey()
     
-    init(journey: Journey, key: String = "", styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-        self.journey = journey
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: listStyles, dict2: self.styles)
         let walkingDistance = getWalkingDistance(sections: journey.sections!)
         
-        return ComponentNode(ListRowComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(JourneySolutionRowComponent(departureTime: journey.departureDateTime!, arrivalTime: journey.arrivalDateTime!, totalDuration: journey.duration, walkingDuration: journey.durations?.walking, walkingDistance: walkingDistance, sections: journey.sections!), in: self)
+        return ComponentNode(ListRowComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(JourneySolutionRowComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.departureTime = self.journey.departureDateTime!
+                component.arrivalTime = self.journey.arrivalDateTime!
+                component.totalDuration = self.journey.duration
+                component.walkingDuration = self.journey.durations?.walking
+                component.walkingDistance = walkingDistance
+                component.sections = self.journey.sections!
+            })
         ])
     }
     

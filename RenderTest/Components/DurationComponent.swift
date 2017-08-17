@@ -12,24 +12,19 @@ import Render
 class DurationComponent: ViewComponent {
     var seconds: Int32 = 0
     
-    init(seconds: Int32 = 0, key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.seconds = seconds
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = self.styles
-        return ComponentNode(ViewComponent(key: self.uniqueKey + "/view", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: String(self.seconds / 60), styles: digitsStyles), in: self),
-            ComponentNode(TextComponent(text: "min", styles: abbrStyles), in: self)
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = String(self.seconds / 60)
+                component.styles = self.digitsStyles
+            }),
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = "min"
+                component.styles = self.abbrStyles
+            })
         ])
     }
     

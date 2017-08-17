@@ -13,25 +13,16 @@ import NavitiaSDK
 class JourneyRoadmapFriezeComponent: ViewComponent {
     var sections: [Section] = []
     
-    init(sections: [Section], key: String = "", styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-        self.sections = sections
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("JourneyRoadmapFriezeComponent::init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
         let sectionComponents = getSectionComponents(sections: self.sections)
-        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
             ComponentNode(SeparatorComponent(), in: self),
-            ComponentNode(ViewComponent(key: "", styles: modeListStyles), in: self).add(children: sectionComponents)
+            ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.styles = self.modeListStyles
+            }).add(children: sectionComponents)
         ])
     }
     
@@ -46,7 +37,12 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
                     mainColor = getUIColorFromHexadecimal(hex: (section.displayInformations?.color)!)
                     lineCode = section.displayInformations?.code
                 }
-                results.append(ComponentNode(JourneySectionAbstractComponent(modeIcon: modeIcon, duration: section.duration!, lineCode: lineCode, color: mainColor), in: self))
+                results.append(ComponentNode(JourneySectionAbstractComponent(), in: self, props: {(component, hasKey: Bool) in
+                    component.modeIcon = modeIcon
+                    component.duration = section.duration!
+                    component.lineCode = lineCode
+                    component.color = mainColor
+                }))
             }
         }
         return results

@@ -12,20 +12,6 @@ class LineCodeComponent: ViewComponent {
     var code: String = ""
     var color: UIColor = UIColor()
     
-    init(code: String, color: UIColor, key: String = "", styles: Dictionary<String, Any> = [:]) {
-        self.code = code
-        self.color = color
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        fatalError("LineCodeComponent::init() has not been implemented. You must specify 'code' and 'color' parameters in constructor")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("LineCodeComponent::init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let codeStyles:[String: Any] = [
             "backgroundColor": self.color,
@@ -38,8 +24,13 @@ class LineCodeComponent: ViewComponent {
             "fontWeight": "bold",
         ]
         let computedStyles = mergeDictionaries(dict1: codeStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: code, styles: textStyles), in: self)
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = self.code
+                component.styles = textStyles
+            })
         ])
     }
     

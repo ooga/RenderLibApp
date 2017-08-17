@@ -12,26 +12,21 @@ class JourneyWalkingAbstractComponent: ViewComponent {
     var duration: Int32 = 0
     var distance: Int32 = 0
     
-    init(duration: Int32, distance: Int32, key: String, styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-        self.duration = duration
-        self.distance = distance
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: containerStyles, dict2: self.styles)
-        return ComponentNode(ViewComponent(key: "", styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: "Dont "), in: self),
-            ComponentNode(TextComponent(text: String(self.duration / 60) + " min", styles: durationStyles), in: self),
-            ComponentNode(TextComponent(text: " à pied (" + distanceText(meters: self.distance) + ")"), in: self),
+        return ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = NSLocalizedString("component.JourneyWalkingAbstractComponent.Whose", comment: "") + " "
+            }),
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = String(self.duration / 60) + " min"
+                component.styles = self.durationStyles
+            }),
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = " à pied (" + distanceText(meters: self.distance) + ")"
+            }),
         ])
     }
 

@@ -10,24 +10,22 @@ import Foundation
 import Render
 
 class DateTimeButtonComponent: ButtonComponent {
-    required init(key: String, styles: Dictionary<String, Any> = [:]) {
-        super.init(key: key, styles: styles)
-    }
-    
-    required init() {
-        super.init(key: "", styles: [:])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func render() -> NodeType {
         let computedStyles = mergeDictionaries(dict1: listRowStyles, dict2: self.styles)
-        return ComponentNode(ButtonComponent(styles: computedStyles), in: self).add(children: [
-            ComponentNode(TextComponent(text: "Départ : Ven. 21 Jui. - 13h30", styles: textStyles), in: self),
-            ComponentNode(ViewComponent(key: "", styles: viewStyles), in: self).add(children: [
-                ComponentNode(IconComponent(name: "arrow-right", styles: iconStyles), in: self)
+        return ComponentNode(ButtonComponent(), in: self, props: {(component, hasKey: Bool) in
+            component.styles = computedStyles
+        }).add(children: [
+            ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.text = "Départ : Ven. 21 Jui. - 13h30"
+                component.styles = self.textStyles
+            }),
+            ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
+                component.styles = self.viewStyles
+            }).add(children: [
+                ComponentNode(IconComponent(), in: self, props: {(component, hasKey: Bool) in
+                    component.name = "arrow-right"
+                    component.styles = self.iconStyles
+                })
             ])
         ])
     }
