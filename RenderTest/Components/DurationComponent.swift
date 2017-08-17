@@ -18,7 +18,7 @@ class DurationComponent: ViewComponent {
             component.styles = computedStyles
         }).add(children: [
             ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
-                component.text = String(self.seconds / 60)
+                component.text = String(Int(ceil(Double(self.seconds) / 60)))
                 component.styles = self.digitsStyles
             }),
             ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
