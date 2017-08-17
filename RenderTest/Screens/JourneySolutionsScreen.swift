@@ -16,6 +16,7 @@ struct JourneySolutionsScreenState: StateType {
     var destination: String = ""
     var destinationId: String = ""
     var journeys: Journeys? = nil
+    var datetime: Date = Date()
     var loading: Bool = false
 }
 
@@ -70,6 +71,7 @@ class JourneySolutionsScreen: ComponentView<JourneySolutionsScreenState> {
         navitiaSDK?.journeysApi.newJourneysRequestBuilder()
             .withFrom(originId)
             .withTo(destinationId)
+            .withDatetime(getIsoDatetime(datetime: state.datetime))
             .get(completion: { journeys, error in
                 if error != nil {
                     NSLog(error.debugDescription)
