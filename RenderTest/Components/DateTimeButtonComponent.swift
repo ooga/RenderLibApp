@@ -18,7 +18,9 @@ class DateTimeButtonComponent: ButtonComponent {
             ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
                 component.text = NSLocalizedString("component.DateTimeButtonComponent.representation.departure", comment: "Datetime represent label") + longDateText(datetime: Date())
                 component.styles = self.textStyles
-            }),
+            })
+            /*
+            ,
             ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in
                 component.styles = self.viewStyles
             }).add(children: [
@@ -27,6 +29,7 @@ class DateTimeButtonComponent: ButtonComponent {
                     component.styles = self.iconStyles
                 })
             ])
+            */
         ])
     }
     
