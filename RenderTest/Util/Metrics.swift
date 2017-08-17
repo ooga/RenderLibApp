@@ -16,6 +16,20 @@ func timeText(isoString: String) -> String {
     return hours + ":" + minutes
 }
 
+func longDateText(datetime: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = config.metrics.longDateFormat
+    
+    return formatter.string(from: datetime)
+}
+
+func getIsoDatetime(datetime: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyyMMdd'T'HHmmss"
+    
+    return formatter.string(from: datetime)
+}
+
 func durationText(seconds: Int32) -> String {
     if (seconds < 60) {
         return "< 1 min"
