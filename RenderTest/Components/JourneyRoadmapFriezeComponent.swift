@@ -50,22 +50,22 @@ class JourneyRoadmapFriezeComponent: ViewComponent {
     
     func getModeIcon(section: Section) -> String {
         switch section.type! {
-            case "public_transport": return getCommercialMode(links: section.links!)
+            case "public_transport": return getPhysicalMode(links: section.links!)
             case "transfer": return section.transferType!
             case "waiting": return section.type!
             default: return section.mode!
         }
     }
     
-    func getCommercialMode(links: [LinkSchema]) -> String {
-        let id = getCommercialModeId(links: links)
+    func getPhysicalMode(links: [LinkSchema]) -> String {
+        let id = getPhysicalModeId(links: links)
         var modeData = id.characters.split(separator: ":").map(String.init)
-        return modeData[1]
+        return modeData[1].lowercased()
     }
     
-    func getCommercialModeId(links: [LinkSchema]) -> String {
+    func getPhysicalModeId(links: [LinkSchema]) -> String {
         for link in links {
-            if link.type == "commercial_mode" {
+            if link.type == "physical_mode" {
                 return link.id!
             }
         }
