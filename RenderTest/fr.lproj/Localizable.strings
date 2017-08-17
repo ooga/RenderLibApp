@@ -4,3 +4,4 @@
 /* Navigation bar title for journey solutions screen */
 "controller.JourneySolutionsController.title" = "Liste de soltuions";
 
+"component.DateTimeButtonComponent.representation.departure" = "Départ : ";

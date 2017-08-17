@@ -16,7 +16,7 @@ class DateTimeButtonComponent: ButtonComponent {
             component.styles = computedStyles
         }).add(children: [
             ComponentNode(TextComponent(), in: self, props: {(component, hasKey: Bool) in
-                component.text = "Départ : Ven. 21 Jui. - 13h30"
+                component.text = NSLocalizedString("component.DateTimeButtonComponent.representation.departure", comment: "Datetime represent label") + longDateText(datetime: Date())
                 component.styles = self.textStyles
             }),
             ComponentNode(ViewComponent(), in: self, props: {(component, hasKey: Bool) in

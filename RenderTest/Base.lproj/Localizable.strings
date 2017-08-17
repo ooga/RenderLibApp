@@ -9,3 +9,5 @@
 "controller.JourneySolutionsController.title" = "Solutions list";
 
 "component.JourneyWalkingAbstractComponent.Whose" = "Whose";
+
+"component.DateTimeButtonComponent.representation.departure" = "Departure: ";
