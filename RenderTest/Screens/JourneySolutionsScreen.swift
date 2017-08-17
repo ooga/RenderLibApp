@@ -74,7 +74,6 @@ class JourneySolutionsScreen: ScreenComponentStateful<JourneySolutionsScreenStat
             .withFrom(originId)
             .withTo(destinationId)
             .withDatetime(getIsoDatetime(datetime: state.datetime))
-            .withMinNbJourneys(6)
             .get(completion: { journeys, error in
                 if error != nil {
                     NSLog(error.debugDescription)
