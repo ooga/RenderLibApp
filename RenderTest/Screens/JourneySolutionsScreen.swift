@@ -42,6 +42,10 @@ class JourneySolutionsScreen: ComponentView<JourneySolutionsScreenState> {
         var journeyComponents: [NodeType] = []
         if state.journeys != nil {
             journeyComponents = self.getJourneyComponents(journeys: state.journeys!)
+        } else {
+            journeyComponents = Array(0..<4).map { _ in
+                ComponentNode(JourneySolutionLoadingComponent(), in: self)
+            }
         }
         
         return ComponentNode(ScreenComponent(), in: self).add(children: [

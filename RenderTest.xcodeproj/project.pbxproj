@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		048E62B11F4587790049E7FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048E62AF1F4587790049E7FB /* Localizable.strings */; };
+		048E62C51F45F3070049E7FB /* JourneySolutionLoadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E62C41F45F3070049E7FB /* JourneySolutionLoadingComponent.swift */; };
 		04EDABCD1F3DB1EA005A107D /* YelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDABCC1F3DB1EA005A107D /* YelpController.swift */; };
 		81E4DB8B441D859CB837099F /* Pods_RenderTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424AD243D003A93CB77465AD /* Pods_RenderTest.framework */; };
 		A103CE421F28D83E00715FAB /* JourneyFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103CE411F28D83E00715FAB /* JourneyFormComponent.swift */; };
@@ -57,6 +58,7 @@
 		048E62AE1F4587340049E7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048E62B01F4587790049E7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = RenderTest/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		048E62B91F458B4B0049E7FB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = RenderTest/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		048E62C41F45F3070049E7FB /* JourneySolutionLoadingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JourneySolutionLoadingComponent.swift; path = Components/JourneySolutionLoadingComponent.swift; sourceTree = "<group>"; };
 		04EDABCC1F3DB1EA005A107D /* YelpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpController.swift; sourceTree = "<group>"; };
 		424AD243D003A93CB77465AD /* Pods_RenderTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RenderTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB69EB843897A145EE2B03D /* Pods_RenderTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RenderTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				A1139F2D1F29DEEB00FD467A /* JourneySectionModeComponent.swift */,
 				A1819C101F31D74E00728894 /* JourneySectionSegmentComponent.swift */,
 				A103CE531F28EFE300715FAB /* JourneySolutionComponent.swift */,
+				048E62C41F45F3070049E7FB /* JourneySolutionLoadingComponent.swift */,
 				A103CE551F28F0E000715FAB /* JourneySolutionRowComponent.swift */,
 				A1819C121F33722C00728894 /* JourneyWalkingAbstractComponent.swift */,
 				A1819C0A1F31CBB200728894 /* LineCodeComponent.swift */,
@@ -404,6 +407,7 @@
 				A1139F2E1F29DEEB00FD467A /* JourneySectionModeComponent.swift in Sources */,
 				A1139F391F29E51900FD467A /* LabelComponent.swift in Sources */,
 				A12FE1ED1F306B7700D2BB8F /* PlaceComponent.swift in Sources */,
+				048E62C51F45F3070049E7FB /* JourneySolutionLoadingComponent.swift in Sources */,
 				A1A17AB81F28D168004B70FD /* JourneySolutionsScreen.swift in Sources */,
 				A135E0321F31C75D00191344 /* JourneySectionAbstractComponent.swift in Sources */,
 				A103CE461F28DAFB00715FAB /* FormComponent.swift in Sources */,
